@@ -1,8 +1,6 @@
-# JSON Resume React Theme Starter
+# JSON Resume React Theme
 
 A modern, responsive React-based theme for [JSON Resume](https://jsonresume.org/), built with React, TypeScript, and Vite.
-
-![JSON Resume React Theme Preview](https://via.placeholder.com/800x400?text=JSON+Resume+React+Theme)
 
 ## Features
 
@@ -15,15 +13,13 @@ A modern, responsive React-based theme for [JSON Resume](https://jsonresume.org/
 - Markdown support for rich text formatting in resume content
 - Modern, clean design with customizable styling
 
-## Installation & Usage
-
-### Quickstart
+## Quickstart
 
 1. Clone this repository:
 
 ```bash
-git clone https://github.com/yourusername/json-resume-theme-starter-react.git
-cd json-resume-theme-starter-react
+git clone https://github.com/yourusername/jsonresume-theme-react.git
+cd jsonresume-theme-react
 ```
 
 2. Install dependencies:
@@ -44,17 +40,6 @@ npm run dev
 ```
 
 5. View your resume at http://localhost:5173 (or the port shown in your terminal)
-
-### Creating a PDF
-
-To generate a PDF of your resume:
-
-1. Open your resume in Chrome/Edge
-2. Press `Ctrl+P` (or `Cmd+P` on Mac) to open the print dialog
-3. Change the destination to "Save as PDF"
-4. Set margins to "None" or "Minimal"
-5. Enable "Background graphics" option if available
-6. Click "Save" to generate your PDF
 
 ## Building for Production
 
@@ -83,7 +68,7 @@ The theme's appearance can be customized by modifying the CSS variables in `src/
 }
 ```
 
-### Two-Column Layout
+### Layout
 
 The theme uses a modern two-column layout that separates the main content (work experience, education, projects) from the sidebar (skills, languages, certificates):
 
@@ -104,53 +89,9 @@ The theme includes comprehensive print styles for professional-looking PDF expor
 
 These optimizations ensure your resume looks great both on screen and when printed or exported to PDF.
 
-### Structure
-
-The theme follows a component-based structure where each section of the resume is represented by its own React component:
-
-- `Header.tsx` - Contact information, name, and summary
-- `WorkExperience.tsx` - Work history and experiences
-- `Education.tsx` - Educational background
-- `Skills.tsx` - Skills and competencies
-- `Projects.tsx` - Projects and works
-- `Volunteer.tsx` - Volunteer experiences
-- `Awards.tsx` - Recognitions and awards
-- `Publications.tsx` - Published works
-- `Languages.tsx` - Language proficiencies
-- `Interests.tsx` - Personal interests and hobbies
-- `References.tsx` - Professional references
-- `Certificates.tsx` - Professional certifications
-
-### Markdown Support
-
-This theme supports Markdown formatting in your resume content, allowing you to add rich text formatting such as bold text, italics, lists, and more to make your resume stand out.
-
-See [MARKDOWN.md](docs/MARKDOWN.md) for detailed documentation on how to use Markdown in your resume.
-
-Example:
-
-```json
-{
-  "basics": {
-    "summary": "I'm a **software engineer** with experience in:\n\n- Frontend development\n- Backend systems\n- Cloud infrastructure"
-  }
-}
-```
-
-The theme properly renders Markdown in:
-
-- Basic summary section
-- Work experience descriptions and highlights
-- Project descriptions
-- Award summaries
-- Reference texts
-- And other text content throughout the resume
-
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
+1. Fork this repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
@@ -158,7 +99,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 

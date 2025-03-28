@@ -1,11 +1,11 @@
 {
   "basics": {
     "name": "John Doe",
-    "label": "Software Engineer",
+    "label": "Senior Software Engineer",
     "email": "john.doe@example.com",
     "phone": "(555) 123-4567",
     "url": "https://example.com",
-    "summary": "Experienced software engineer with a passion for building scalable web applications. Specialized in React, TypeScript, and modern web technologies.",
+    "summary": "Senior Software Engineer with 8+ years of experience in full-stack development, specializing in scalable web applications and cloud infrastructure. Expert in React, TypeScript, and modern web technologies. Proven track record of leading technical teams and delivering high-impact solutions. Strong focus on code quality, performance optimization, and developer experience.",
     "location": {
       "city": "San Francisco",
       "region": "CA",
@@ -31,13 +31,22 @@
       "location": "San Francisco, CA",
       "startDate": "2020-01",
       "endDate": "Present",
-      "summary": "Leading development of enterprise web applications using React and TypeScript.",
+      "summary": "Leading development of enterprise web applications using React and TypeScript. Responsible for architecture decisions, technical leadership, and mentoring junior developers.",
       "highlights": [
-        "Architected and implemented a new component library",
-        "Reduced build time by 40% through optimization",
-        "Mentored junior developers in React best practices"
+        "Architected and implemented a new component library that reduced development time by 30% and improved consistency across applications",
+        "Led the migration of legacy applications to modern React with TypeScript, resulting in 40% reduction in bugs and improved developer productivity",
+        "Implemented micro-frontend architecture using Module Federation, enabling independent deployment of features and reducing build times by 60%",
+        "Mentored junior developers in React best practices and TypeScript, leading to improved code quality and reduced technical debt",
+        "Optimized application performance by implementing code splitting, lazy loading, and caching strategies, resulting in 50% faster page loads"
       ],
-      "keywords": ["React", "TypeScript", "Webpack", "Jest"]
+      "keywords": [
+        "React",
+        "TypeScript",
+        "Webpack",
+        "Jest",
+        "Micro-frontends",
+        "Performance Optimization"
+      ]
     },
     {
       "name": "StartupX",
@@ -45,13 +54,15 @@
       "location": "San Francisco, CA",
       "startDate": "2018-03",
       "endDate": "2019-12",
-      "summary": "Developed full-stack web applications using modern technologies.",
+      "summary": "Developed full-stack web applications using modern technologies. Focused on building scalable solutions and improving development workflows.",
       "highlights": [
-        "Built responsive web applications using React and Node.js",
-        "Implemented real-time features using WebSocket",
-        "Improved test coverage to 90%"
+        "Built responsive web applications using React and Node.js, serving over 1M monthly active users",
+        "Implemented real-time features using WebSocket and Redis, reducing latency by 70%",
+        "Improved test coverage to 90% by implementing comprehensive testing strategies and CI/CD pipelines",
+        "Developed reusable UI components that reduced development time by 25%",
+        "Optimized database queries and implemented caching, resulting in 40% faster API response times"
       ],
-      "keywords": ["React", "Node.js", "MongoDB", "WebSocket"]
+      "keywords": ["React", "Node.js", "MongoDB", "WebSocket", "Redis", "Testing"]
     }
   ],
   "education": [
@@ -62,21 +73,76 @@
       "startDate": "2014",
       "endDate": "2018",
       "gpa": "3.8",
-      "courses": ["Data Structures", "Algorithms", "Software Engineering", "Database Systems"]
+      "courses": [
+        "Data Structures and Algorithms",
+        "Software Engineering",
+        "Database Systems",
+        "Distributed Systems",
+        "Machine Learning",
+        "Computer Networks",
+        "Operating Systems",
+        "Software Testing"
+      ]
     }
   ],
   "skills": [
     {
       "name": "Frontend",
-      "keywords": ["React", "TypeScript", "JavaScript", "HTML", "CSS"]
+      "keywords": [
+        "React",
+        "TypeScript",
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "Next.js",
+        "Redux",
+        "Webpack",
+        "Vite",
+        "Tailwind CSS"
+      ]
     },
     {
       "name": "Backend",
-      "keywords": ["Node.js", "Python", "Java", "SQL", "MongoDB"]
+      "keywords": [
+        "Node.js",
+        "Python",
+        "Java",
+        "SQL",
+        "MongoDB",
+        "PostgreSQL",
+        "Redis",
+        "GraphQL",
+        "REST APIs",
+        "Microservices"
+      ]
     },
     {
-      "name": "Tools",
-      "keywords": ["Git", "Docker", "AWS", "Jest", "Webpack"]
+      "name": "DevOps & Cloud",
+      "keywords": [
+        "Git",
+        "Docker",
+        "AWS",
+        "Kubernetes",
+        "CI/CD",
+        "Jenkins",
+        "GitHub Actions",
+        "Terraform",
+        "Prometheus",
+        "Grafana"
+      ]
+    },
+    {
+      "name": "Testing & Quality",
+      "keywords": [
+        "Jest",
+        "React Testing Library",
+        "Cypress",
+        "Selenium",
+        "SonarQube",
+        "ESLint",
+        "Prettier",
+        "TypeScript"
+      ]
     }
   ],
   "languages": [
@@ -92,7 +158,24 @@
   "interests": [
     {
       "name": "Technology",
-      "keywords": ["Web Development", "Cloud Computing", "AI/ML"]
+      "keywords": [
+        "Web Development",
+        "Cloud Computing",
+        "AI/ML",
+        "DevOps",
+        "System Design",
+        "Performance Optimization"
+      ]
+    },
+    {
+      "name": "Leadership",
+      "keywords": [
+        "Technical Leadership",
+        "Mentoring",
+        "Team Building",
+        "Architecture Design",
+        "Code Review"
+      ]
     },
     {
       "name": "Outdoor Activities",
@@ -101,27 +184,43 @@
   ],
   "projects": [
     {
-      "name": "Personal Portfolio",
-      "description": "A modern portfolio website built with React and TypeScript",
+      "name": "Enterprise Component Library",
+      "description": "A comprehensive component library built with React and TypeScript, designed for enterprise applications",
       "highlights": [
-        "Implemented responsive design",
-        "Added dark/light theme support",
-        "Optimized performance and accessibility"
+        "Developed 50+ reusable components with comprehensive documentation and examples",
+        "Implemented accessibility features following WCAG 2.1 guidelines",
+        "Created a custom theming system supporting multiple design systems",
+        "Built a Storybook-based documentation site with interactive examples",
+        "Achieved 95% test coverage with unit and integration tests"
       ],
-      "keywords": ["React", "TypeScript", "Tailwind CSS"]
+      "keywords": ["React", "TypeScript", "Storybook", "Testing", "Accessibility", "Design Systems"]
+    },
+    {
+      "name": "Performance Monitoring Dashboard",
+      "description": "Real-time performance monitoring system for web applications",
+      "highlights": [
+        "Built using React, TypeScript, and WebSocket for real-time updates",
+        "Integrated with Prometheus and Grafana for metrics visualization",
+        "Implemented custom charts and graphs using D3.js",
+        "Added alerting system for performance anomalies",
+        "Reduced dashboard load time by 70% through optimization"
+      ],
+      "keywords": ["React", "TypeScript", "WebSocket", "D3.js", "Prometheus", "Grafana"]
     }
   ],
   "volunteer": [
     {
       "organization": "Code for Good",
-      "position": "Mentor",
+      "position": "Technical Mentor",
       "startDate": "2020",
       "endDate": "Present",
-      "summary": "Mentoring aspiring developers in web development",
+      "summary": "Mentoring aspiring developers in web development and software engineering best practices",
       "highlights": [
-        "Conducted weekly coding workshops",
-        "Helped students build their first web applications",
-        "Created learning materials for beginners"
+        "Conducted weekly coding workshops focusing on React and TypeScript",
+        "Helped students build their first web applications and deploy them to production",
+        "Created learning materials and documentation for beginners",
+        "Organized hackathons and coding challenges",
+        "Mentored 50+ students in their transition to professional development"
       ]
     }
   ],
@@ -131,6 +230,12 @@
       "issuer": "Amazon Web Services",
       "date": "2021-06",
       "url": "https://aws.amazon.com/certification"
+    },
+    {
+      "name": "Professional Scrum Master I",
+      "issuer": "Scrum.org",
+      "date": "2020-12",
+      "url": "https://www.scrum.org"
     }
   ],
   "awards": [
@@ -138,7 +243,13 @@
       "title": "Best Technical Blog Post",
       "date": "2021",
       "awarder": "Tech Blog Awards",
-      "summary": "Awarded for an article about React performance optimization"
+      "summary": "Awarded for an article about React performance optimization techniques in enterprise applications"
+    },
+    {
+      "title": "Innovation Award",
+      "date": "2020",
+      "awarder": "Tech Corp",
+      "summary": "Recognized for leading the successful migration of legacy applications to modern React architecture"
     }
   ],
   "publications": [
@@ -147,13 +258,24 @@
       "publisher": "Tech Publishing",
       "releaseDate": "2022",
       "url": "https://example.com/publication",
-      "summary": "A comprehensive guide to modern web development"
+      "summary": "A comprehensive guide to modern web development, covering React, TypeScript, and best practices"
+    },
+    {
+      "name": "Building Scalable Web Applications",
+      "publisher": "Dev Journal",
+      "releaseDate": "2021",
+      "url": "https://example.com/publication2",
+      "summary": "Technical article about architecture patterns and performance optimization in React applications"
     }
   ],
   "references": [
     {
       "name": "Jane Smith",
-      "reference": "John is an exceptional engineer who consistently delivers high-quality code and innovative solutions."
+      "reference": "John is an exceptional engineer who consistently delivers high-quality code and innovative solutions. His technical leadership and mentoring have been invaluable to our team."
+    },
+    {
+      "name": "Mike Johnson",
+      "reference": "Working with John has been a great experience. His expertise in React and TypeScript, combined with his focus on code quality and performance, has significantly improved our codebase."
     }
   ]
 }

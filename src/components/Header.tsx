@@ -83,7 +83,7 @@ export const Header: React.FC<HeaderProps> = ({ basics }) => {
             rel="noopener noreferrer"
             className="flex gap-2 items-center transition-colors hover:text-brand print:gap-1"
           >
-            <BsGlobe className="w-4 h-4 text-brand print:w-3 print:h-3" />
+            <BsGlobe className="w-4 h-4 text-brand print:w-4 print:h-4" />
             {url}
           </a>
         )}
@@ -113,7 +113,7 @@ export const Header: React.FC<HeaderProps> = ({ basics }) => {
       )}
 
       {summary && (
-        <div className="mt-6 leading-relaxed text-foreground-secondary print:mt-0">
+        <div className="mt-6 leading-relaxed text-foreground-secondary print:m-0 print:py-4">
           <Summary summary={summary} />
         </div>
       )}

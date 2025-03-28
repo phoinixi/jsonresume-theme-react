@@ -10,7 +10,6 @@ interface TimelineEntryProps {
   children: ReactNode;
 }
 
-// Format duration in natural language
 function formatDuration(startDate?: string, endDate?: string): string {
   if (!startDate) return '';
 
@@ -41,7 +40,7 @@ function formatDuration(startDate?: string, endDate?: string): string {
 
 export const TimelineEntry: React.FC<TimelineEntryProps> = ({ startDate, endDate, children }) => {
   return (
-    <div className="mb-8 print:mb-2">
+    <div className="mb-8 print:m-0 print:py-4 print:border-b print:border-color">
       {startDate && (
         <div className="mb-2 text-sm print:mb-1 print:text-[9px]">
           <div className="flex items-center">
@@ -55,7 +54,6 @@ export const TimelineEntry: React.FC<TimelineEntryProps> = ({ startDate, endDate
               </>
             )}
 
-            {/* Duration in natural language next to the dates */}
             <span className="ml-2 text-sm text-foreground-tertiary print:ml-1">
               ({formatDuration(startDate, endDate)})
             </span>

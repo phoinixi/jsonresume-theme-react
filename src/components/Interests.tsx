@@ -9,7 +9,6 @@ interface InterestsProps {
 }
 
 export const Interests: React.FC<InterestsProps> = ({ interests }) => {
-  // Generate UUIDs for interests and keywords only once
   const interestsWithIds = React.useMemo(() => {
     return (
       interests?.map(interest => ({
@@ -30,14 +29,7 @@ export const Interests: React.FC<InterestsProps> = ({ interests }) => {
       <SectionTitle title="Interests" />
       <TagList>
         {interestsWithIds.map(interest => (
-          <Tag key={interest._id}>
-            {interest.name}
-            {interest.keywords && interest.keywords.length > 0 && (
-              <span className="ml-1 text-foreground-muted">
-                ({interest.keywords.map(k => k.text).join(', ')})
-              </span>
-            )}
-          </Tag>
+          <Tag key={interest._id}>{interest.name}</Tag>
         ))}
       </TagList>
     </section>

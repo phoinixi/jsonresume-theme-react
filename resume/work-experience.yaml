@@ -1,0 +1,21 @@
+work:
+  - company: Microsoft
+    position: Senior Software Engineer - Frontend focused
+    location: Zürich, Switzerland
+    startDate: 2019-05
+    endDate: ""
+    summary: Dynamics 365 Customer Insights. As a team we own data export and integration with external services.
+    highlights:
+      - Designed and implemented the Client-side of a generative **AI chatbot** integrated across multiple products.
+      - Developed a **plugin framework** using declarative **TypeScript**, enabling scalability from 3 to 50+ plugins and reducing development time significantly.
+      - Increased code quality by boosting test coverage from 60% to 90% in 3 months.
+      - Reduced bundle size by 40% and improved TTI by 1.5 seconds through code splitting with React.lazy, Suspense, and dependency optimization using Webpack Bundle Analyzer.
+      - Collaborated closely with designers to align user experience across the product.
+      - **Mentored junior engineers** and onboarded new team members.
+    keywords:
+      - TypeScript
+      - React
+      - Redux
+      - Webpack
+      - Vite
+      - Yarn

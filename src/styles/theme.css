@@ -1,0 +1,81 @@
+@layer base {
+  :root {
+    /* Modern Minimalist Theme - Light Mode */
+    --color-brand: #3b82f6; /* More sophisticated blue accent */
+    --color-brand-light: #60a5fa; /* Lighter blue for hover */
+    --color-brand-dark: #1d4ed8; /* Darker blue for active */
+
+    /* Text Colors - Refined monochromatic scale */
+    --color-text: #1f2937; /* Near-black text for headings */
+    --color-text-secondary: #4b5563; /* Medium gray text for body */
+    --color-text-tertiary: #6b7280; /* Light gray text for captions */
+    --color-text-muted: #6b7178; /* Muted text for less important content */
+
+    /* Background Colors */
+    --color-bg: #ffffff; /* Pure white background */
+    --color-bg-secondary: #f8fafc; /* Very subtle off-white for cards */
+    --color-bg-accent: #eff6ff; /* Very light blue accent background */
+
+    /* Border Colors */
+    --color-border: #e5e7eb; /* Light gray border */
+
+    /* Accent colors */
+    --color-accent-primary: #10b981; /* Emerald green for success/positive */
+    --color-accent-secondary: #f59e0b; /* Amber for warnings/neutral */
+    --color-accent-danger: #ef4444; /* Red for errors/negative */
+  }
+}
+
+@layer components {
+  .text-brand {
+    @apply text-[var(--color-brand)];
+  }
+
+  .text-brand-light {
+    @apply text-[var(--color-brand-light)];
+  }
+
+  .text-brand-dark {
+    @apply text-[var(--color-brand-dark)];
+  }
+
+  .text-text {
+    @apply text-[var(--color-text)];
+  }
+
+  .text-text-secondary {
+    @apply text-[var(--color-text-secondary)];
+  }
+
+  .text-text-tertiary {
+    @apply text-[var(--color-text-tertiary)];
+  }
+
+  .text-text-muted {
+    @apply text-[var(--color-text-muted)];
+  }
+
+  .bg-color {
+    @apply bg-[var(--color-bg)];
+  }
+
+  .bg-color-secondary {
+    @apply bg-[var(--color-bg-secondary)];
+  }
+
+  .border-color {
+    @apply border-[var(--color-border)];
+  }
+
+  .text-accent-primary {
+    @apply text-[var(--color-accent-primary)];
+  }
+
+  .text-accent-secondary {
+    @apply text-[var(--color-accent-secondary)];
+  }
+
+  .text-accent-danger {
+    @apply text-[var(--color-accent-danger)];
+  }
+}

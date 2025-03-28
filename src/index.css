@@ -1,0 +1,59 @@
+@import './styles/theme.css';
+@import './styles/markdown.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-surface text-foreground text-[13px] antialiased;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    color-adjust: exact;
+    font-family:
+      'Helvetica Neue',
+      system-ui,
+      -apple-system,
+      'Segoe UI',
+      Roboto,
+      'Helvetica Neue',
+      Arial,
+      sans-serif;
+  }
+
+  body {
+    @apply m-0 bg-surface text-foreground;
+  }
+
+  a {
+    @apply transition-colors text-primary-dark hover:text-primary hover:underline;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply m-0 font-normal leading-tight text-foreground;
+  }
+}
+
+/* Basic print adjustments that are hard to do with Tailwind classes */
+@media print {
+  html {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  a[href]:after {
+    content: none !important;
+  }
+
+  /* Define page margins */
+  @page {
+    margin: 0.7cm 0.5cm;
+    size: auto;
+  }
+}

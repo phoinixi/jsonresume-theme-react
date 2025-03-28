@@ -1,0 +1,159 @@
+{
+  "basics": {
+    "name": "John Doe",
+    "label": "Software Engineer",
+    "email": "john.doe@example.com",
+    "phone": "(555) 123-4567",
+    "url": "https://example.com",
+    "summary": "Experienced software engineer with a passion for building scalable web applications. Specialized in React, TypeScript, and modern web technologies.",
+    "location": {
+      "city": "San Francisco",
+      "region": "CA",
+      "country": "USA"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "johndoe",
+        "url": "https://github.com/example"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "johndoe",
+        "url": "https://linkedin.com/in/johndoe"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Tech Corp",
+      "position": "Senior Software Engineer",
+      "location": "San Francisco, CA",
+      "startDate": "2020-01",
+      "endDate": "Present",
+      "summary": "Leading development of enterprise web applications using React and TypeScript.",
+      "highlights": [
+        "Architected and implemented a new component library",
+        "Reduced build time by 40% through optimization",
+        "Mentored junior developers in React best practices"
+      ],
+      "keywords": ["React", "TypeScript", "Webpack", "Jest"]
+    },
+    {
+      "name": "StartupX",
+      "position": "Software Engineer",
+      "location": "San Francisco, CA",
+      "startDate": "2018-03",
+      "endDate": "2019-12",
+      "summary": "Developed full-stack web applications using modern technologies.",
+      "highlights": [
+        "Built responsive web applications using React and Node.js",
+        "Implemented real-time features using WebSocket",
+        "Improved test coverage to 90%"
+      ],
+      "keywords": ["React", "Node.js", "MongoDB", "WebSocket"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Technology",
+      "area": "Computer Science",
+      "studyType": "Bachelor",
+      "startDate": "2014",
+      "endDate": "2018",
+      "gpa": "3.8",
+      "courses": ["Data Structures", "Algorithms", "Software Engineering", "Database Systems"]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Frontend",
+      "keywords": ["React", "TypeScript", "JavaScript", "HTML", "CSS"]
+    },
+    {
+      "name": "Backend",
+      "keywords": ["Node.js", "Python", "Java", "SQL", "MongoDB"]
+    },
+    {
+      "name": "Tools",
+      "keywords": ["Git", "Docker", "AWS", "Jest", "Webpack"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native"
+    },
+    {
+      "language": "Spanish",
+      "fluency": "Professional"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Technology",
+      "keywords": ["Web Development", "Cloud Computing", "AI/ML"]
+    },
+    {
+      "name": "Outdoor Activities",
+      "keywords": ["Hiking", "Photography", "Travel"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Personal Portfolio",
+      "description": "A modern portfolio website built with React and TypeScript",
+      "highlights": [
+        "Implemented responsive design",
+        "Added dark/light theme support",
+        "Optimized performance and accessibility"
+      ],
+      "keywords": ["React", "TypeScript", "Tailwind CSS"]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Code for Good",
+      "position": "Mentor",
+      "startDate": "2020",
+      "endDate": "Present",
+      "summary": "Mentoring aspiring developers in web development",
+      "highlights": [
+        "Conducted weekly coding workshops",
+        "Helped students build their first web applications",
+        "Created learning materials for beginners"
+      ]
+    }
+  ],
+  "certificates": [
+    {
+      "name": "AWS Certified Solutions Architect",
+      "issuer": "Amazon Web Services",
+      "date": "2021-06",
+      "url": "https://aws.amazon.com/certification"
+    }
+  ],
+  "awards": [
+    {
+      "title": "Best Technical Blog Post",
+      "date": "2021",
+      "awarder": "Tech Blog Awards",
+      "summary": "Awarded for an article about React performance optimization"
+    }
+  ],
+  "publications": [
+    {
+      "name": "Modern Web Development with React",
+      "publisher": "Tech Publishing",
+      "releaseDate": "2022",
+      "url": "https://example.com/publication",
+      "summary": "A comprehensive guide to modern web development"
+    }
+  ],
+  "references": [
+    {
+      "name": "Jane Smith",
+      "reference": "John is an exceptional engineer who consistently delivers high-quality code and innovative solutions."
+    }
+  ]
+}

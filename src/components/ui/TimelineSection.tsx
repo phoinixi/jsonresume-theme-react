@@ -1,61 +1,53 @@
 import React, { ReactNode } from 'react';
 import { SectionTitle } from './SectionTitle';
-import { formatDate } from '../../lib/utils';
+import { useDate, useDuration } from '../../lib/hooks/useDate';
 import { BsArrowRight } from 'react-icons/bs';
 
 interface TimelineEntryProps {
   startDate?: string;
   endDate?: string;
-  dotColor?: string;
   children: ReactNode;
 }
 
-function formatDuration(startDate?: string, endDate?: string): string {
-  if (!startDate) return '';
-
-  const start = new Date(startDate);
-  const end = endDate ? new Date(endDate) : new Date();
-
-  const years = end.getFullYear() - start.getFullYear();
-  const months = end.getMonth() - start.getMonth();
-
-  let totalMonths = years * 12 + months;
-  if (end.getDate() < start.getDate()) {
-    totalMonths--;
-  }
-
-  const displayYears = Math.floor(totalMonths / 12);
-  const displayMonths = totalMonths % 12;
-
-  if (displayYears > 0 && displayMonths > 0) {
-    return `${displayYears} ${displayYears === 1 ? 'year' : 'years'} ${displayMonths} ${displayMonths === 1 ? 'month' : 'months'}`;
-  } else if (displayYears > 0) {
-    return `${displayYears} ${displayYears === 1 ? 'year' : 'years'}`;
-  } else if (displayMonths > 0) {
-    return `${displayMonths} ${displayMonths === 1 ? 'month' : 'months'}`;
-  } else {
-    return 'Less than a month';
-  }
-}
-
 export const TimelineEntry: React.FC<TimelineEntryProps> = ({ startDate, endDate, children }) => {
+  const formattedStartDate = useDate(startDate);
+  const formattedEndDate = useDate(endDate);
+  const duration = useDuration(startDate, endDate);
+
   return (
-    <div className="mb-8 print:m-0 print:py-4 print:border-b print:border-color">
+    <div className="mb-8 print:m-0 print:py-4 print:border-b print:border-color" role="article">
       {startDate && (
         <div className="mb-2 text-sm print:mb-1 print:text-[9px]">
           <div className="flex items-center">
-            <span className="font-medium text-foreground">{formatDate(startDate)}</span>
+            <span
+              className="font-medium text-foreground"
+              role="time"
+              aria-label={`Start date: ${formattedStartDate}`}
+            >
+              {formattedStartDate}
+            </span>
             {(endDate || endDate === null) && (
               <>
-                <BsArrowRight className="mx-1 text-foreground-tertiary print:w-2 print:h-2" />
-                <span className="font-medium text-foreground">
-                  {endDate ? formatDate(endDate) : 'Present'}
+                <BsArrowRight
+                  className="mx-1 text-foreground-tertiary print:w-2 print:h-2"
+                  aria-hidden="true"
+                />
+                <span
+                  className="font-medium text-foreground"
+                  role="time"
+                  aria-label={`End date: ${endDate ? formattedEndDate : 'Present'}`}
+                >
+                  {endDate ? formattedEndDate : 'Present'}
                 </span>
               </>
             )}
 
-            <span className="ml-2 text-sm text-foreground-tertiary print:ml-1">
-              ({formatDuration(startDate, endDate)})
+            <span
+              className="ml-2 text-sm text-foreground-tertiary print:ml-1"
+              role="time"
+              aria-label={`Duration: ${duration}`}
+            >
+              ({duration})
             </span>
           </div>
         </div>
@@ -73,9 +65,18 @@ interface TimelineSectionProps {
 
 export const TimelineSection: React.FC<TimelineSectionProps> = ({ title, children }) => {
   return (
-    <section className="mb-8 print:mb-4 print:break-inside-auto">
-      <SectionTitle title={title} />
-      <div className="space-y-2 print:space-y-0">{children}</div>
+    <section
+      className="mb-8 print:m-0 print:py-4 print:border-b print:border-color"
+      role="region"
+      aria-labelledby={`section-title-${title.toLowerCase().replace(/\s+/g, '-')}`}
+    >
+      <SectionTitle
+        title={title}
+        id={`section-title-${title.toLowerCase().replace(/\s+/g, '-')}`}
+      />
+      <div className="relative pl-6 before:absolute before:left-0 before:top-0 before:h-full before:w-px before:bg-border print:pl-4 print:before:bg-border/50">
+        {children}
+      </div>
     </section>
   );
 };

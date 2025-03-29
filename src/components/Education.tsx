@@ -1,37 +1,37 @@
-import React from 'react';
-import type { ResumeSchema } from '../types/resumeSchema';
-import { SectionCard } from './ui/SectionCard';
+import { FC } from 'react';
 import { TimelineSection, TimelineEntry } from './ui/TimelineSection';
+import { SectionCard } from './ui/SectionCard';
+import type { ResumeSchema } from '../types/resumeSchema';
+
+type Education = NonNullable<ResumeSchema['education']>[number] & {
+  location?: string;
+};
 
 interface EducationProps {
-  education: ResumeSchema['education'];
+  education: Education[];
 }
 
-export const Education: React.FC<EducationProps> = ({ education }) => {
-  const educationWithIds = React.useMemo(() => {
-    return (
-      education?.map(item => ({
-        ...item,
-        _id: crypto.randomUUID(),
-      })) || []
-    );
-  }, [education]);
-
-  if (!educationWithIds.length) return null;
+export const Education: FC<EducationProps> = ({ education }) => {
+  if (!education || education.length === 0) return null;
 
   return (
     <TimelineSection title="Education">
-      {educationWithIds.map(edu => (
-        <TimelineEntry key={edu._id} startDate={edu.startDate} endDate={edu.endDate}>
-          <SectionCard
-            title={edu.studyType || edu.area}
-            subtitle={edu.institution}
-            subtitleUrl={edu.url}
-            summary={edu.score ? `GPA: ${edu.score}` : undefined}
-            highlights={edu.courses}
-          />
-        </TimelineEntry>
-      ))}
+      {education.map((edu, index) => {
+        const title = edu.studyType || edu.area || '';
+        const institution = edu.institution || '';
+        return (
+          <TimelineEntry key={`education-${index}`} startDate={edu.startDate} endDate={edu.endDate}>
+            <SectionCard
+              title={title}
+              subtitle={institution}
+              subtitleUrl={edu.url}
+              location={edu.location}
+              summary={edu.score ? `GPA: ${edu.score}` : undefined}
+              keywords={edu.courses || []}
+            />
+          </TimelineEntry>
+        );
+      })}
     </TimelineSection>
   );
 };

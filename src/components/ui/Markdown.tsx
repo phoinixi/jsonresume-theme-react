@@ -12,7 +12,7 @@ export const Markdown: React.FC<MarkdownProps> = ({ content, className }) => {
   if (!content) return null;
 
   return (
-    <div className={cn('markdown', className)}>
+    <div className={cn('markdown', className)} role="contentinfo" aria-label="Markdown content">
       <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
     </div>
   );

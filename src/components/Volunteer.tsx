@@ -8,29 +8,12 @@ interface VolunteerProps {
 }
 
 export const Volunteer: React.FC<VolunteerProps> = ({ volunteer }) => {
-  // Generate UUIDs for volunteer experiences only once
-  const volunteerWithIds = React.useMemo(() => {
-    return (
-      volunteer?.map(item => ({
-        ...item,
-        _id: crypto.randomUUID(),
-        // Keep highlights as string[] for SectionCard
-        highlights: item.highlights,
-      })) || []
-    );
-  }, [volunteer]);
-
-  if (!volunteerWithIds.length) return null;
+  if (!volunteer?.length) return null;
 
   return (
     <TimelineSection title="Volunteer">
-      {volunteerWithIds.map(item => (
-        <TimelineEntry
-          key={item._id}
-          startDate={item.startDate}
-          endDate={item.endDate}
-          dotColor="accent"
-        >
+      {volunteer.map((item, index) => (
+        <TimelineEntry key={`volunteer-${index}`} startDate={item.startDate} endDate={item.endDate}>
           <SectionCard
             title={item.position}
             subtitle={item.organization}

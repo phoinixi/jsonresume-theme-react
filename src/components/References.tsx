@@ -8,23 +8,17 @@ interface ReferencesProps {
 }
 
 export const References: React.FC<ReferencesProps> = ({ references }) => {
-  // Generate UUIDs for references
-  const referencesWithIds = React.useMemo(() => {
-    return (
-      references?.map(reference => ({
-        ...reference,
-        _id: crypto.randomUUID(),
-      })) || []
-    );
-  }, [references]);
-
-  if (!referencesWithIds.length) return null;
+  if (!references?.length) return null;
 
   return (
     <section className="mb-8">
       <SectionTitle title="References" />
-      {referencesWithIds.map(reference => (
-        <SectionCard key={reference._id} title={reference.name} summary={reference.reference} />
+      {references.map((reference, index) => (
+        <SectionCard
+          key={`reference-${index}`}
+          title={reference.name}
+          summary={reference.reference}
+        />
       ))}
     </section>
   );

@@ -8,22 +8,16 @@ interface ProjectsProps {
 }
 
 export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
-  // Generate UUIDs for projects and highlights only once
-  const projectsWithIds = React.useMemo(() => {
-    return (
-      projects?.map(item => ({
-        ...item,
-        _id: crypto.randomUUID(),
-      })) || []
-    );
-  }, [projects]);
-
-  if (!projectsWithIds.length) return null;
+  if (!projects?.length) return null;
 
   return (
     <TimelineSection title="Projects">
-      {projectsWithIds.map(project => (
-        <TimelineEntry key={project._id} startDate={project.startDate} endDate={project.endDate}>
+      {projects.map((project, index) => (
+        <TimelineEntry
+          key={`project-${index}`}
+          startDate={project.startDate}
+          endDate={project.endDate}
+        >
           <SectionCard
             title={project.name}
             subtitle={project.entity}

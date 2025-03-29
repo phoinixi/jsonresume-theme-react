@@ -1,7 +1,7 @@
-import React from 'react';
-import type { ResumeSchema } from '../types/resumeSchema';
-import { SectionCard } from './ui/SectionCard';
+import { FC } from 'react';
 import { TimelineSection, TimelineEntry } from './ui/TimelineSection';
+import { SectionCard } from './ui/SectionCard';
+import type { ResumeSchema } from '../types/resumeSchema';
 
 type Work = NonNullable<ResumeSchema['work']>[number] & {
   keywords?: string[];
@@ -11,31 +11,25 @@ interface WorkExperienceProps {
   work: Work[];
 }
 
-export const WorkExperience: React.FC<WorkExperienceProps> = ({ work }) => {
-  const workWithIds = React.useMemo(() => {
-    return (
-      work?.map(item => ({
-        ...item,
-        _id: crypto.randomUUID(),
-        highlights: item.highlights,
-      })) || []
-    );
-  }, [work]);
-
-  if (!workWithIds.length) return null;
+export const WorkExperience: FC<WorkExperienceProps> = ({ work }) => {
+  if (!work || work.length === 0) return null;
 
   return (
     <TimelineSection title="Work Experience">
-      {workWithIds.map(workItem => (
-        <TimelineEntry key={workItem._id} startDate={workItem.startDate} endDate={workItem.endDate}>
+      {work.map((workItem, index) => (
+        <TimelineEntry
+          key={`work-${index}`}
+          startDate={workItem.startDate}
+          endDate={workItem.endDate}
+        >
           <SectionCard
             title={workItem.position}
             subtitle={workItem.name}
             subtitleUrl={workItem.url}
             location={workItem.location}
+            summary={workItem.summary}
             highlights={workItem.highlights}
             keywords={workItem.keywords}
-            summary={workItem.summary}
           />
         </TimelineEntry>
       ))}

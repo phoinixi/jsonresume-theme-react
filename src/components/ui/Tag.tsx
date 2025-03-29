@@ -22,6 +22,8 @@ export const Tag: FC<TagProps> = ({ children, className, variant = 'default' }) 
         variantClasses[variant],
         className
       )}
+      role="status"
+      aria-label={typeof children === 'string' ? children : 'Tag'}
     >
       {children}
     </span>

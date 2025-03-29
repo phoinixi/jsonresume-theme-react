@@ -8,22 +8,12 @@ interface PublicationsProps {
 }
 
 export const Publications: React.FC<PublicationsProps> = ({ publications }) => {
-  // Generate UUIDs for publications only once
-  const publicationsWithIds = React.useMemo(() => {
-    return (
-      publications?.map(publication => ({
-        ...publication,
-        _id: crypto.randomUUID(),
-      })) || []
-    );
-  }, [publications]);
-
-  if (!publicationsWithIds.length) return null;
+  if (!publications?.length) return null;
 
   return (
     <TimelineSection title="Publications">
-      {publicationsWithIds.map(publication => (
-        <TimelineEntry key={publication._id} startDate={publication.releaseDate} dotColor="brand">
+      {publications.map((publication, index) => (
+        <TimelineEntry key={`publication-${index}`} startDate={publication.releaseDate}>
           <SectionCard
             title={publication.name}
             subtitle={publication.publisher}

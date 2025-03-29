@@ -7,24 +7,14 @@ interface LanguagesProps {
 }
 
 export const Languages: React.FC<LanguagesProps> = ({ languages }) => {
-  // Generate UUIDs for languages only once
-  const languagesWithIds = React.useMemo(() => {
-    return (
-      languages?.map(language => ({
-        ...language,
-        _id: crypto.randomUUID(),
-      })) || []
-    );
-  }, [languages]);
-
-  if (!languagesWithIds.length) return null;
+  if (!languages?.length) return null;
 
   return (
     <section className="mb-4">
       <SectionTitle title="Languages" />
       <div className="grid grid-cols-2">
-        {languagesWithIds.map(language => (
-          <div key={language._id}>
+        {languages.map((language, index) => (
+          <div key={`language-${index}`}>
             <h3 className="text-base font-medium text-foreground">{language.language}</h3>
             {language.fluency && (
               <p className="text-sm text-foreground-tertiary">{language.fluency}</p>

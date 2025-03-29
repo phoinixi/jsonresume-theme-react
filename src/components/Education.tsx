@@ -13,7 +13,6 @@ export const Education: React.FC<EducationProps> = ({ education }) => {
       education?.map(item => ({
         ...item,
         _id: crypto.randomUUID(),
-        courses: item.courses,
       })) || []
     );
   }, [education]);
@@ -27,8 +26,9 @@ export const Education: React.FC<EducationProps> = ({ education }) => {
           <SectionCard
             title={edu.studyType || edu.area}
             subtitle={edu.institution}
-            keywords={edu.courses}
+            subtitleUrl={edu.url}
             summary={edu.score ? `GPA: ${edu.score}` : undefined}
+            highlights={edu.courses}
           />
         </TimelineEntry>
       ))}

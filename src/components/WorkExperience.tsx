@@ -31,6 +31,7 @@ export const WorkExperience: React.FC<WorkExperienceProps> = ({ work }) => {
           <SectionCard
             title={workItem.position}
             subtitle={workItem.name}
+            subtitleUrl={workItem.url}
             location={workItem.location}
             highlights={workItem.highlights}
             keywords={workItem.keywords}

@@ -15,12 +15,12 @@
       {
         "network": "GitHub",
         "username": "johndoe",
-        "url": "https://github.com/example"
+        "url": "https://example.com"
       },
       {
         "network": "LinkedIn",
         "username": "johndoe",
-        "url": "https://linkedin.com/in/johndoe"
+        "url": "https://example.com"
       }
     ]
   },
@@ -31,6 +31,7 @@
       "location": "San Francisco, CA",
       "startDate": "2020-01",
       "endDate": "Present",
+      "url": "https://example.com",
       "summary": "Leading development of enterprise web applications using React and TypeScript. Responsible for architecture decisions, technical leadership, and mentoring junior developers.",
       "highlights": [
         "Architected and implemented a new component library that reduced development time by 30% and improved consistency across applications",
@@ -54,6 +55,7 @@
       "location": "San Francisco, CA",
       "startDate": "2018-03",
       "endDate": "2019-12",
+      "url": "https://example.com",
       "summary": "Developed full-stack web applications using modern technologies. Focused on building scalable solutions and improving development workflows.",
       "highlights": [
         "Built responsive web applications using React and Node.js, serving over 1M monthly active users",
@@ -72,6 +74,7 @@
       "studyType": "Bachelor",
       "startDate": "2014",
       "endDate": "2018",
+      "url": "https://example.com",
       "gpa": "3.8",
       "courses": [
         "Data Structures and Algorithms",
@@ -185,7 +188,9 @@
   "projects": [
     {
       "name": "Enterprise Component Library",
+      "entity": "Tech Corp",
       "description": "A comprehensive component library built with React and TypeScript, designed for enterprise applications",
+      "url": "https://example.com",
       "highlights": [
         "Developed 50+ reusable components with comprehensive documentation and examples",
         "Implemented accessibility features following WCAG 2.1 guidelines",
@@ -197,7 +202,9 @@
     },
     {
       "name": "Performance Monitoring Dashboard",
+      "entity": "StartupX",
       "description": "Real-time performance monitoring system for web applications",
+      "url": "https://example.com",
       "highlights": [
         "Built using React, TypeScript, and WebSocket for real-time updates",
         "Integrated with Prometheus and Grafana for metrics visualization",
@@ -214,6 +221,7 @@
       "position": "Technical Mentor",
       "startDate": "2020",
       "endDate": "Present",
+      "url": "https://example.com",
       "summary": "Mentoring aspiring developers in web development and software engineering best practices",
       "highlights": [
         "Conducted weekly coding workshops focusing on React and TypeScript",
@@ -229,13 +237,13 @@
       "name": "AWS Certified Solutions Architect",
       "issuer": "Amazon Web Services",
       "date": "2021-06",
-      "url": "https://aws.amazon.com/certification"
+      "url": "https://example.com"
     },
     {
       "name": "Professional Scrum Master I",
       "issuer": "Scrum.org",
       "date": "2020-12",
-      "url": "https://www.scrum.org"
+      "url": "https://example.com"
     }
   ],
   "awards": [
@@ -243,12 +251,14 @@
       "title": "Best Technical Blog Post",
       "date": "2021",
       "awarder": "Tech Blog Awards",
+      "url": "https://example.com",
       "summary": "Awarded for an article about React performance optimization techniques in enterprise applications"
     },
     {
       "title": "Innovation Award",
       "date": "2020",
       "awarder": "Tech Corp",
+      "url": "https://example.com",
       "summary": "Recognized for leading the successful migration of legacy applications to modern React architecture"
     }
   ],
@@ -257,14 +267,14 @@
       "name": "Modern Web Development with React",
       "publisher": "Tech Publishing",
       "releaseDate": "2022",
-      "url": "https://example.com/publication",
+      "url": "https://example.com",
       "summary": "A comprehensive guide to modern web development, covering React, TypeScript, and best practices"
     },
     {
       "name": "Building Scalable Web Applications",
       "publisher": "Dev Journal",
       "releaseDate": "2021",
-      "url": "https://example.com/publication2",
+      "url": "https://example.com",
       "summary": "Technical article about architecture patterns and performance optimization in React applications"
     }
   ],

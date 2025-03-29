@@ -11,11 +11,9 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   // Generate UUIDs for projects and highlights only once
   const projectsWithIds = React.useMemo(() => {
     return (
-      projects?.map(project => ({
-        ...project,
+      projects?.map(item => ({
+        ...item,
         _id: crypto.randomUUID(),
-        // Keep highlights as string[] for SectionCard
-        highlights: project.highlights,
       })) || []
     );
   }, [projects]);
@@ -25,29 +23,15 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   return (
     <TimelineSection title="Projects">
       {projectsWithIds.map(project => (
-        <TimelineEntry
-          key={project._id}
-          startDate={project.startDate}
-          endDate={project.endDate}
-          dotColor="brand"
-        >
+        <TimelineEntry key={project._id} startDate={project.startDate} endDate={project.endDate}>
           <SectionCard
             title={project.name}
-            highlights={project.highlights}
+            subtitle={project.entity}
+            subtitleUrl={project.url}
             summary={project.description}
+            highlights={project.highlights}
             keywords={project.keywords}
-          >
-            {project.url && (
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-brand hover:underline"
-              >
-                View Project
-              </a>
-            )}
-          </SectionCard>
+          />
         </TimelineEntry>
       ))}
     </TimelineSection>

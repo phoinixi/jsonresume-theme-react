@@ -4,10 +4,12 @@ import { TagList } from './TagList';
 import { Tag } from './Tag';
 import { getContactIcon } from '../../lib/socialIcons';
 import { Markdown } from './Markdown';
+import { Subtitle } from './Subtitle';
 
 interface SectionCardProps {
   title?: string;
   subtitle?: ReactNode;
+  subtitleUrl?: string;
   date?: string;
   location?: string;
   summary?: string;
@@ -20,6 +22,7 @@ interface SectionCardProps {
 export const SectionCard: FC<SectionCardProps> = ({
   title,
   subtitle,
+  subtitleUrl,
   date,
   location,
   summary,
@@ -41,14 +44,7 @@ export const SectionCard: FC<SectionCardProps> = ({
         {title && (
           <div className="flex justify-between items-start">
             <h3 className="text-lg font-medium text-foreground print:text-[12px]">
-              {subtitle ? (
-                <>
-                  {title} <span className="font-normal text-foreground-secondary">at</span>{' '}
-                  <span className="font-normal text-foreground-secondary">{subtitle}</span>
-                </>
-              ) : (
-                title
-              )}
+              <Subtitle title={title} subtitle={subtitle} subtitleUrl={subtitleUrl} />
             </h3>
             {date && (
               <div className="text-sm whitespace-nowrap text-foreground-tertiary print:text-[9px]">

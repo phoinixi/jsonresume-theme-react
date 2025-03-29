@@ -1,37 +1,52 @@
-import React from 'react';
+import { FC, memo } from 'react';
 import type { ResumeSchema } from '../types/resumeSchema';
-import { SectionCard } from './ui/SectionCard';
 import { TimelineSection, TimelineEntry } from './ui/TimelineSection';
+import { SectionCard } from './ui/SectionCard';
 
-interface VolunteerProps {
-  volunteer: ResumeSchema['volunteer'];
+type Volunteer = NonNullable<ResumeSchema['volunteer']>[number];
+
+interface VolunteerItemProps {
+  volunteer: Volunteer;
+  index: number;
 }
 
-export const Volunteer: React.FC<VolunteerProps> = ({ volunteer }) => {
+const VolunteerItem = memo<VolunteerItemProps>(({ volunteer, index }) => (
+  <TimelineEntry
+    key={`volunteer-${index}`}
+    startDate={volunteer.startDate}
+    endDate={volunteer.endDate}
+  >
+    <SectionCard
+      title={volunteer.position}
+      subtitle={volunteer.organization}
+      highlights={volunteer.highlights}
+      summary={volunteer.summary}
+    >
+      {volunteer.url && (
+        <a
+          href={volunteer.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm text-brand hover:underline"
+        >
+          Visit Website
+        </a>
+      )}
+    </SectionCard>
+  </TimelineEntry>
+));
+
+interface VolunteerProps {
+  volunteer?: Volunteer[];
+}
+
+export const Volunteer: FC<VolunteerProps> = ({ volunteer }) => {
   if (!volunteer?.length) return null;
 
   return (
     <TimelineSection title="Volunteer">
       {volunteer.map((item, index) => (
-        <TimelineEntry key={`volunteer-${index}`} startDate={item.startDate} endDate={item.endDate}>
-          <SectionCard
-            title={item.position}
-            subtitle={item.organization}
-            highlights={item.highlights}
-            summary={item.summary}
-          >
-            {item.url && (
-              <a
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-brand hover:underline"
-              >
-                Visit Website
-              </a>
-            )}
-          </SectionCard>
-        </TimelineEntry>
+        <VolunteerItem key={`volunteer-${index}`} volunteer={item} index={index} />
       ))}
     </TimelineSection>
   );

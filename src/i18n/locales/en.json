@@ -1,0 +1,78 @@
+{
+  "sections": {
+    "about": "About",
+    "work": "Work Experience",
+    "education": "Education",
+    "skills": "Skills",
+    "projects": "Projects",
+    "awards": "Awards",
+    "certificates": "Certificates",
+    "publications": "Publications",
+    "languages": "Languages",
+    "interests": "Interests",
+    "references": "References",
+    "volunteer": "Volunteer"
+  },
+  "common": {
+    "present": "Present",
+    "visitWebsite": "Visit Website",
+    "viewPublication": "View Publication",
+    "viewProject": "View Project",
+    "viewCertificate": "View Certificate",
+    "viewAward": "View Award",
+    "viewProfile": "View Profile",
+    "view": "View",
+    "at": "at",
+    "awardedBy": "Awarded by",
+    "issuedBy": "Issued by",
+    "contactInfo": "Contact information",
+    "email": "Email",
+    "phone": "Phone",
+    "website": "Website",
+    "socialProfiles": "Social profiles",
+    "profile": "profile",
+    "lessThanAMonth": "Less than a month",
+    "terms": "Common Terms",
+    "currentPosition": "Current Position",
+    "pastPosition": "Past Position",
+    "shortPosition": "Short Position",
+    "duration": {
+      "year": "year",
+      "years": "years",
+      "month": "month",
+      "months": "months",
+      "lessThanMonth": "Less than a month"
+    },
+    "fluency": {
+      "native": "Native",
+      "fluent": "Fluent",
+      "advanced": "Advanced",
+      "professional": "Professional",
+      "intermediate": "Intermediate",
+      "basic": "Basic",
+      "beginner": "Beginner"
+    }
+  },
+  "titles": {
+    "skills": "Skills",
+    "languages": "Languages",
+    "education": "Education"
+  },
+  "language": {
+    "testTitle": "Language Support Test",
+    "testDescription": "This component demonstrates how the resume looks in different languages. Change the URL parameter to test other languages.",
+    "currentLanguage": "Current language",
+    "switchInstructions": "Change the URL parameter to switch languages:"
+  },
+  "fluency": {
+    "native": "Native",
+    "fluent": "Fluent",
+    "intermediate": "Intermediate",
+    "beginner": "Beginner"
+  },
+  "date": {
+    "format": "MMM yyyy",
+    "range": "{{start}} - {{end}}",
+    "present": "{{start}} - Present"
+  }
+}

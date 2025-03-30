@@ -4,98 +4,96 @@ A modern, responsive React-based theme for [JSON Resume](https://jsonresume.org/
 
 ## Features
 
+- 🌐 **Multilingual Resumes**: Support for completely different resume content in different languages
+- 📱 **Responsive Design**: Optimized for desktop, tablet, and mobile devices.
+- 🖨️ **Print-Friendly**: Specially formatted for printing or PDF generation.
+- 🎨 **Modern UI**: Clean, professional design with customizable styles.
+- 📊 **Component-Based**: Structured React components for each resume section.
 - Built with React 18 and TypeScript
 - Fully supports the complete [JSON Resume schema](https://jsonresume.org/schema/)
 - Standalone React application - no external tools required
-- Responsive design that looks great on mobile, tablet, and desktop
 - Two-column layout for better organization of resume sections
 - Print-optimized styling for professional PDF generation
 - Markdown support for rich text formatting in resume content
-- Modern, clean design with customizable styling
 
-## Quickstart
+## Getting Started
 
-1. Clone this repository:
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Create your resume.json in the root directory
+4. Start the development server: `npm run dev -- --lang=en`
 
-```bash
-git clone https://github.com/yourusername/jsonresume-theme-react.git
-cd jsonresume-theme-react
-```
+## Multilingual Resumes
 
-2. Install dependencies:
+This theme supports completely different resume content in different languages. You can have different resume versions for different regions or languages.
 
-```bash
-npm install
-```
+### Setting Up Language-Specific Resumes
 
-3. Add your resume data:
+1. Place your default (English) resume in the root directory as `resume.json`
+2. Create language-specific resume files in the root directory following the pattern `resume-{lang}.json`:
+   - `resume-fr.json` for French
+   - `resume-de.json` for German
+   - `resume-it.json` for Italian
+   - etc.
 
-   - Edit the `src/data/resume.json` file with your information following the [JSON Resume schema](https://jsonresume.org/schema/)
-   - Alternatively, copy your existing `resume.json` file to the `src/data/` directory
+Each resume file should follow the [JSON Resume schema](https://jsonresume.org/schema/).
 
-4. Run the development server:
+### Development with Language-Specific Resumes
 
-```bash
-npm run dev
-```
-
-5. View your resume at http://localhost:5173 (or the port shown in your terminal)
-
-## Building for Production
-
-To create a production-ready build:
+The language parameter is **mandatory** for both dev and build scripts.
 
 ```bash
-npm run build
+# Run with English (using resume.json)
+npm run dev -- --lang=en
+
+# Run with Italian (will look for resume-it.json, falls back to resume.json if not found)
+npm run dev -- --lang=it
+
+# Run with French and a custom resume file
+npm run dev -- --lang=fr --resume=./path/to/custom-resume.json
 ```
 
-This generates static files in the `dist` directory that can be deployed to any static hosting service like GitHub Pages, Netlify, Vercel, etc.
+The script first checks for a language-specific resume file (e.g., `resume-it.json` for Italian) before falling back to the default `resume.json`.
 
-## Customization
+### Building Language-Specific Resumes
 
-### Styling
+Build works exactly like development, but creates optimized production builds:
 
-The theme's appearance can be customized by modifying the CSS variables in `src/styles/theme.css`:
+```bash
+# Build English version
+npm run build -- --lang=en
 
-```css
-:root {
-  --color-brand: #4f46e5;
-  --color-brand-dark: #4338ca;
-  --color-brand-light: #6366f1;
-  --color-bg: #ffffff;
-  --color-bg-secondary: #f9fafb;
-  /* and more variables */
-}
+# Build Italian version
+npm run build -- --lang=it
+
+# Build French version with custom resume
+npm run build -- --lang=fr --resume=./path/to/custom-resume.json
 ```
 
-### Layout
+Builds are output to `dist/{lang}/` directories (e.g., `dist/en/`, `dist/it/`).
 
-The theme uses a modern two-column layout that separates the main content (work experience, education, projects) from the sidebar (skills, languages, certificates):
+## UI Translations
 
-- Left column (68%): Work experience, education, projects, volunteer work, publications
-- Right column (32%): Skills, languages, certificates, awards, interests, references
+In addition to having completely different resume content for each language, the UI elements (like section titles, buttons, etc.) are also translated into the selected language.
 
-This layout is responsive and switches to a single column on mobile devices.
+## Language Support
 
-### Print Optimization
+The theme comes with built-in translations for UI elements in:
 
-The theme includes comprehensive print styles for professional-looking PDF exports:
+- English (en)
+- German (de)
+- French (fr)
+- Spanish (es)
+- Italian (it)
+- Russian (ru)
+- Chinese (zh)
 
-- Proper page breaks to avoid cutting content in awkward places
-- Compact spacing to maximize content per page
-- Optimized typography for print legibility
-- Print-specific adjustments for margins, colors, and layout
-- Media query print styles using Tailwind's `print:` variant
+## Development
 
-These optimizations ensure your resume looks great both on screen and when printed or exported to PDF.
-
-## Contributing
-
-1. Fork this repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+- `npm run dev -- --lang={lang}` - Start the development server with specified language
+- `npm run build -- --lang={lang}` - Build for production with specified language
+- `npm run lint` - Run linting
+- `npm run format` - Format code
 
 ## License
 

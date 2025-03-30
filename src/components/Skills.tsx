@@ -13,7 +13,7 @@ export const Skills: React.FC<SkillsProps> = ({ skills }) => {
 
   return (
     <section className="mb-6">
-      <SectionTitle title="Skills" />
+      <SectionTitle title="sections.skills" />
       <div className="grid grid-cols-2 gap-4">
         {skills.map((skill, skillIndex) => (
           <div key={`skill-${skillIndex}`}>

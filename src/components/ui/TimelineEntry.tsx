@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react';
 import { useDate, useDuration, useDateRange } from '../../lib/hooks/useDate';
-import { SectionTitle } from './SectionTitle';
 
 interface TimelineEntryProps {
   startDate?: string;
@@ -44,25 +43,5 @@ export const TimelineEntry: React.FC<TimelineEntryProps> = ({
 
       {children}
     </div>
-  );
-};
-
-interface TimelineSectionProps {
-  title: string;
-  children: ReactNode;
-}
-
-export const TimelineSection: React.FC<TimelineSectionProps> = ({ title, children }) => {
-  return (
-    <section
-      className="mb-8 print:m-0 print:py-4 print:border-b print:border-color"
-      role="region"
-      aria-labelledby={`section-title-${title.toLowerCase().replace(/\s+/g, '-')}`}
-    >
-      <SectionTitle title={title} />
-      <div className="relative before:absolute before:left-0 before:top-0 before:h-full before:w-px before:bg-border">
-        {children}
-      </div>
-    </section>
   );
 };

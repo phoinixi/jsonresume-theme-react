@@ -1,0 +1,53 @@
+{
+  "sections": {
+    "work": "Berufserfahrung",
+    "education": "Ausbildung",
+    "skills": "Fähigkeiten",
+    "projects": "Projekte",
+    "awards": "Auszeichnungen",
+    "certificates": "Zertifikate",
+    "publications": "Veröffentlichungen",
+    "languages": "Sprachen",
+    "interests": "Interessen",
+    "references": "Referenzen",
+    "volunteer": "Ehrenamt",
+    "about": "Über Mich"
+  },
+  "common": {
+    "present": "Aktuell",
+    "visitWebsite": "Website Besuchen",
+    "viewPublication": "Veröffentlichung Anzeigen",
+    "viewProject": "Projekt Anzeigen",
+    "viewCertificate": "Zertifikat Anzeigen",
+    "viewAward": "Auszeichnung Anzeigen",
+    "awardedBy": "Verliehen von",
+    "issuedBy": "Ausgestellt von",
+    "at": "bei",
+    "contactInfo": "Kontaktinformationen",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "website": "Website",
+    "socialProfiles": "Soziale Profile",
+    "profile": "Profil",
+    "fluency": {
+      "native": "Muttersprache",
+      "fluent": "Fließend",
+      "advanced": "Fortgeschritten",
+      "intermediate": "Mittelstufe",
+      "basic": "Grundkenntnisse"
+    },
+    "duration": {
+      "year": "Jahr",
+      "years": "Jahre",
+      "month": "Monat",
+      "months": "Monate",
+      "lessThanMonth": "Weniger als ein Monat"
+    }
+  },
+  "date": {
+    "format": "MMM yyyy",
+    "range": "{{start}} - {{end}}",
+    "present": "{{start}} - Aktuell",
+    "label": "Datum"
+  }
+}

@@ -23,7 +23,7 @@ export const References: FC<ReferencesProps> = ({ references }) => {
 
   return (
     <section className="mb-8">
-      <SectionTitle title="References" />
+      <SectionTitle title="sections.references" />
       {references.map((item, index) => (
         <ReferenceItem key={`reference-${index}`} reference={item} index={index} />
       ))}

@@ -1,0 +1,77 @@
+{
+  "sections": {
+    "work": "Esperienza Lavorativa",
+    "education": "Formazione",
+    "skills": "Competenze",
+    "projects": "Progetti",
+    "awards": "Riconoscimenti",
+    "certificates": "Certificazioni",
+    "publications": "Pubblicazioni",
+    "languages": "Lingue",
+    "interests": "Interessi",
+    "references": "Referenze",
+    "volunteer": "Volontariato",
+    "about": "Chi Sono"
+  },
+  "common": {
+    "present": "Attuale",
+    "visitWebsite": "Visita il Sito",
+    "viewPublication": "Visualizza Pubblicazione",
+    "viewProject": "Visualizza Progetto",
+    "viewCertificate": "Visualizza Certificazione",
+    "viewAward": "Visualizza Riconoscimento",
+    "viewProfile": "Visualizza Profilo",
+    "view": "Visualizza",
+    "at": "presso",
+    "awardedBy": "Rilasciato da",
+    "issuedBy": "Emesso da",
+    "contactInfo": "Informazioni di Contatto",
+    "email": "Email",
+    "phone": "Telefono",
+    "website": "Sito Web",
+    "socialProfiles": "Profili Sociali",
+    "profile": "profilo",
+    "lessThanAMonth": "Meno di un mese",
+    "terms": "Termini Comuni",
+    "currentPosition": "Posizione Attuale",
+    "pastPosition": "Posizione Passata",
+    "shortPosition": "Posizione Breve",
+    "duration": {
+      "year": "anno",
+      "years": "anni",
+      "month": "mese",
+      "months": "mesi",
+      "lessThanMonth": "Meno di un mese"
+    },
+    "fluency": {
+      "native": "Madrelingua",
+      "fluent": "Fluente",
+      "advanced": "Avanzato",
+      "intermediate": "Intermedio",
+      "basic": "Base"
+    }
+  },
+  "titles": {
+    "skills": "Competenze",
+    "languages": "Lingue",
+    "education": "Formazione"
+  },
+  "language": {
+    "testTitle": "Test Supporto Lingue",
+    "testDescription": "Questo componente dimostra come appare il curriculum in diverse lingue. Cambia il parametro URL per testare altre lingue.",
+    "currentLanguage": "Lingua corrente",
+    "switchInstructions": "Cambia il parametro URL per cambiare lingua:"
+  },
+  "fluency": {
+    "native": "Madrelingua",
+    "madrelingua": "Madrelingua",
+    "fluent": "Fluente",
+    "intermediate": "Intermedio",
+    "beginner": "Principiante"
+  },
+  "date": {
+    "format": "MMM yyyy",
+    "range": "{{start}} - {{end}}",
+    "present": "{{start}} - Attuale"
+  }
+}

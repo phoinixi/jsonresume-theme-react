@@ -1,4 +1,11 @@
-import { FaGithub, FaLinkedin, FaTwitter, FaMapMarkerAlt, FaMobileAlt } from 'react-icons/fa';
+import {
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaMapMarkerAlt,
+  FaMobileAlt,
+  FaXing,
+} from 'react-icons/fa';
 import { SiLeetcode, SiMedium } from 'react-icons/si';
 import { BsStackOverflow } from 'react-icons/bs';
 import { BiEnvelope } from 'react-icons/bi';
@@ -10,6 +17,7 @@ export const socialIcons = {
   leetcode: { icon: SiLeetcode, color: '#FFA116' },
   medium: { icon: SiMedium, color: '#000000' },
   stackoverflow: { icon: BsStackOverflow, color: '#F48024' },
+  xing: { icon: FaXing, color: '#006567' },
 } as const;
 
 export const contactIcons = {

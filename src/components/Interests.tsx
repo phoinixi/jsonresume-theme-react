@@ -24,7 +24,7 @@ export const Interests: FC<InterestsProps> = ({ interests }) => {
 
   return (
     <section className="mb-8">
-      <SectionTitle title="Interests" />
+      <SectionTitle title="sections.interests" />
       <TagList>
         {interests.map((item, index) => (
           <InterestItem key={`interest-${index}`} interest={item} index={index} />

@@ -1,44 +1,47 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
+import { useTranslation } from 'react-i18next';
+import type { ResumeSchema } from '../../types/resumeSchema';
 import { getIcon } from '../../lib/socialIcons';
 
-interface Profile {
-  network?: string;
-  url?: string;
-  username?: string;
-}
-
 interface SocialProfilesProps {
-  profiles?: Profile[];
+  profiles?: NonNullable<ResumeSchema['basics']>['profiles'];
 }
 
-export const SocialProfiles: FC<SocialProfilesProps> = ({ profiles }) => {
-  if (!profiles?.length) return null;
+export const SocialProfiles: FC<SocialProfilesProps> = memo(({ profiles }) => {
+  const { t } = useTranslation();
+
+  if (!profiles || profiles.length === 0) return null;
 
   return (
-    <div
-      className="flex gap-4 mt-2 print:gap-2 print:mt-1"
-      role="contentinfo"
-      aria-label="Social profiles"
-    >
-      {profiles.map((profile, index) => {
-        const social = profile.network ? getIcon(profile.network) : null;
-        if (!social) return null;
-        const { icon: Icon, color } = social;
-        return (
-          <a
-            key={`profile-${index}`}
-            href={profile.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex gap-2 items-center text-sm print:gap-1"
-            title={profile.network}
-            aria-label={`${profile.network} profile: ${profile.username}`}
-          >
-            <Icon style={{ color }} className="w-4 h-4 print:w-3 print:h-3" aria-hidden="true" />
-            {profile.username}
-          </a>
-        );
-      })}
+    <div className="mt-2 print:mt-1">
+      <div className="flex flex-wrap gap-3">
+        {profiles.map((profile, index) => {
+          if (!profile.network) return null;
+
+          const iconData = getIcon(profile.network);
+          // Use default values when icon is not found
+          const Icon = iconData?.icon;
+          const color = iconData?.color || '#6c6c6c';
+
+          return (
+            <a
+              key={index}
+              href="https://example.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-sm hover:text-foreground-muted"
+              title={`${profile.network} ${t('common.profile')}`}
+            >
+              {Icon ? (
+                <Icon style={{ color }} className="w-4 h-4" />
+              ) : (
+                <span className="w-4 h-4 inline-block">•</span>
+              )}
+              <span className="hover:underline">{profile.network}</span>
+            </a>
+          );
+        })}
+      </div>
     </div>
   );
-};
+});

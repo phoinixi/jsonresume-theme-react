@@ -1,0 +1,324 @@
+{
+  "basics": {
+    "name": "Max Müller",
+    "label": "Softwareentwickler",
+    "email": "max.mueller@example.com",
+    "phone": "+49 123 4567890",
+    "url": "https://example.com",
+    "summary": "Erfahrener Softwareentwickler mit 7 Jahren Erfahrung in der Entwicklung komplexer Web- und Mobile-Anwendungen. Spezialisiert auf JavaScript, React und moderne Backend-Technologien. Stark in der Konzeption skalierbarer Architekturen und der Optimierung von Entwicklungsprozessen.",
+    "location": {
+      "address": "Hauptstraße 123",
+      "postalCode": "10178",
+      "city": "Berlin",
+      "region": "Berlin",
+      "countryCode": "DE"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "maxmueller",
+        "url": "https://example.com"
+      },
+      {
+        "network": "GitHub",
+        "username": "maxmueller",
+        "url": "https://example.com"
+      },
+      {
+        "network": "Twitter",
+        "username": "maxmueller",
+        "url": "https://example.com"
+      },
+      {
+        "network": "Xing",
+        "username": "maxmueller",
+        "url": "https://example.com"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Innovativ GmbH",
+      "position": "Senior Softwareentwickler",
+      "url": "https://example.com",
+      "startDate": "2020-02-01",
+      "summary": "Leitung der Frontend-Entwicklung für eine Enterprise-SaaS-Plattform mit Fokus auf Performance und Benutzerfreundlichkeit. Implementierung moderner Entwicklungspraktiken und Coaching des Entwicklungsteams.",
+      "highlights": [
+        "Reduzierung der Ladezeit der Anwendung um 60% durch Code-Splitting und Lazy Loading",
+        "Entwicklung und Implementierung einer skalierbaren Komponentenbibliothek",
+        "Einführung von automatisierten Tests, die die Fehlerrate um 45% reduzierten",
+        "Mentoring von 5 Junior-Entwicklern"
+      ]
+    },
+    {
+      "name": "Digital Solutions AG",
+      "position": "Fullstack-Entwickler",
+      "url": "https://example.com",
+      "startDate": "2018-03-01",
+      "endDate": "2020-01-31",
+      "summary": "Verantwortlich für die Entwicklung und Wartung mehrerer kundenspezifischer Webanwendungen mit React, Node.js und PostgreSQL. Enge Zusammenarbeit mit dem Produkt- und Designteam.",
+      "highlights": [
+        "Implementierung von RESTful APIs für 3 große Kundenprojekte",
+        "Migration einer Legacy-Anwendung zu einer modernen Microservices-Architektur",
+        "Einführung von Continuous Integration und Deployment-Pipelines",
+        "Optimierung von Datenbankabfragen, die zu einer 50%igen Verbesserung der Antwortzeiten führte"
+      ]
+    },
+    {
+      "name": "WebTech Startup",
+      "position": "Frontend-Entwickler",
+      "url": "https://example.com",
+      "startDate": "2016-07-01",
+      "endDate": "2018-02-28",
+      "summary": "Entwicklung von responsiven Benutzeroberflächen für eine B2B-SaaS-Plattform. Umsetzung von UI/UX-Designs und Implementierung von Frontend-Funktionalitäten.",
+      "highlights": [
+        "Entwicklung einer Single-Page-Application mit React und Redux",
+        "Implementierung eines responsiven Designs für mobile und Desktop-Benutzer",
+        "Erstellung einer umfassenden Testabdeckung mit Jest und React Testing Library",
+        "Verbesserung der Accessibility-Standards der Anwendung"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Technische Universität Berlin",
+      "url": "https://example.com",
+      "area": "Informatik",
+      "studyType": "Master",
+      "startDate": "2014-10-01",
+      "endDate": "2016-09-30",
+      "score": "1,3",
+      "courses": [
+        "Verteilte Systeme",
+        "Maschinelles Lernen",
+        "Softwarearchitektur",
+        "Cloud Computing",
+        "Advanced Web Technologies"
+      ]
+    },
+    {
+      "institution": "Universität Hamburg",
+      "url": "https://example.com",
+      "area": "Informatik",
+      "studyType": "Bachelor",
+      "startDate": "2011-10-01",
+      "endDate": "2014-09-30",
+      "score": "1,7",
+      "courses": [
+        "Algorithmen und Datenstrukturen",
+        "Objektorientierte Programmierung",
+        "Datenbanksysteme",
+        "Betriebssysteme",
+        "Netzwerke"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Frontend",
+      "level": "Fortgeschritten",
+      "keywords": [
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Redux",
+        "Vue.js",
+        "HTML5",
+        "CSS3",
+        "SCSS",
+        "Webpack",
+        "Jest"
+      ]
+    },
+    {
+      "name": "Backend",
+      "level": "Fortgeschritten",
+      "keywords": [
+        "Node.js",
+        "Express",
+        "NestJS",
+        "Python",
+        "Django",
+        "REST API",
+        "GraphQL",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis"
+      ]
+    },
+    {
+      "name": "DevOps",
+      "level": "Mittel",
+      "keywords": ["Docker", "Kubernetes", "AWS", "CI/CD", "GitHub Actions", "Jenkins", "Terraform"]
+    },
+    {
+      "name": "Mobile",
+      "level": "Mittel",
+      "keywords": ["React Native", "Flutter", "Progressive Web Apps", "Responsive Design"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Deutsch",
+      "fluency": "Muttersprache"
+    },
+    {
+      "language": "Englisch",
+      "fluency": "Fließend"
+    },
+    {
+      "language": "Französisch",
+      "fluency": "Grundkenntnisse"
+    },
+    {
+      "language": "Spanisch",
+      "fluency": "Grundkenntnisse"
+    }
+  ],
+  "projects": [
+    {
+      "name": "E-Commerce-Plattform",
+      "description": "Entwicklung einer skalierbaren E-Commerce-Plattform mit erweiterten Funktionen für Produktverwaltung, Bestandsverfolgung und Kundenbindung.",
+      "highlights": [
+        "Implementierung eines Microservices-Backends mit Node.js und NestJS",
+        "Entwicklung einer dynamischen Frontend-Oberfläche mit React und Next.js",
+        "Integration von Zahlungs-Gateways und Versanddienstleistern",
+        "Implementierung von Echtzeit-Analysen und Berichten"
+      ],
+      "keywords": [
+        "React",
+        "Next.js",
+        "Node.js",
+        "NestJS",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "Kubernetes"
+      ],
+      "startDate": "2019-05-01",
+      "endDate": "2019-12-31",
+      "url": "https://example.com",
+      "roles": ["Fullstack-Entwickler", "Systemarchitekt"]
+    },
+    {
+      "name": "Collaboration Tool",
+      "description": "Ein Tool für die Zusammenarbeit in Teams mit Funktionen für Projektmanagement, Dokumentenverwaltung und Kommunikation.",
+      "highlights": [
+        "Entwicklung einer Echtzeit-Kollaborationsfunktion mit WebSockets",
+        "Implementierung eines rollenbasierten Zugriffssteuerungssystems",
+        "Integration mit gängigen Produktivitätstools",
+        "Entwicklung einer mobilen App für iOS und Android"
+      ],
+      "keywords": ["React", "Node.js", "Socket.io", "MongoDB", "React Native", "Redux", "AWS"],
+      "startDate": "2017-08-01",
+      "endDate": "2018-01-31",
+      "url": "https://example.com",
+      "roles": ["Frontend-Entwickler", "API-Entwickler"]
+    }
+  ],
+  "certificates": [
+    {
+      "name": "AWS Certified Solutions Architect – Professional",
+      "issuer": "Amazon Web Services",
+      "date": "2022-01-15",
+      "url": "https://example.com"
+    },
+    {
+      "name": "Google Cloud Professional Developer",
+      "issuer": "Google Cloud",
+      "date": "2021-07-10",
+      "url": "https://example.com"
+    },
+    {
+      "name": "Certified Kubernetes Administrator",
+      "issuer": "Cloud Native Computing Foundation",
+      "date": "2020-11-25",
+      "url": "https://example.com"
+    }
+  ],
+  "awards": [
+    {
+      "title": "Innovationspreis Digitale Wirtschaft",
+      "date": "2021-09-20",
+      "awarder": "Bundesverband Digitale Wirtschaft",
+      "summary": "Auszeichnung für herausragende innovative Lösungen im Bereich der digitalen Transformation.",
+      "url": "https://example.com"
+    },
+    {
+      "title": "Berlin Tech Hackathon - Erster Platz",
+      "date": "2019-03-15",
+      "awarder": "Berlin Tech Alliance",
+      "summary": "Erster Platz für die Entwicklung einer neuartigen Lösung für nachhaltiges Stadtleben.",
+      "url": "https://example.com"
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Programmieren für Kinder e.V.",
+      "position": "Workshop-Leiter",
+      "url": "https://example.com",
+      "startDate": "2019-09-01",
+      "summary": "Organisation und Durchführung von Programmier-Workshops für Kinder und Jugendliche zur Förderung digitaler Kompetenzen.",
+      "highlights": [
+        "Entwicklung eines altersgerechten Lehrplans für Programmieranfänger",
+        "Durchführung von über 20 Workshops mit mehr als 200 Teilnehmern",
+        "Erstellung von frei verfügbaren Lehrmaterialien für Schulen"
+      ]
+    },
+    {
+      "organization": "Open Source Berlin",
+      "position": "Beitragender Entwickler",
+      "url": "https://example.com",
+      "startDate": "2018-01-01",
+      "endDate": "2020-12-31",
+      "summary": "Aktiver Beitrag zu Open-Source-Projekten mit Fokus auf Entwicklerwerkzeuge und Bibliotheken für moderne Webentwicklung.",
+      "highlights": [
+        "Bedeutende Beiträge zu 5 Open-Source-Projekten",
+        "Organisation von Meetups und Veranstaltungen zur Förderung von Open Source",
+        "Mentoring von Neueinsteigern in der Open-Source-Community"
+      ]
+    }
+  ],
+  "interests": [
+    {
+      "name": "Fotografie",
+      "keywords": ["Landschaftsfotografie", "Astrofotografie", "Digitale Bildbearbeitung"]
+    },
+    {
+      "name": "Bergwandern",
+      "keywords": ["Alpen", "Mehrtagestouren", "Klettersteige"]
+    },
+    {
+      "name": "Musik",
+      "keywords": ["Klavier", "Klassische Musik", "Jazz"]
+    }
+  ],
+  "references": [
+    {
+      "name": "Dr. Sabine Schmidt",
+      "reference": "Max ist ein außergewöhnlich talentierter Entwickler mit einem tiefen Verständnis für komplexe technische Herausforderungen. Seine Fähigkeit, elegante Lösungen für schwierige Probleme zu finden, hat unser Produkt auf ein neues Niveau gehoben.",
+      "position": "CTO, Innovativ GmbH"
+    },
+    {
+      "name": "Andreas Weber",
+      "reference": "Die Zusammenarbeit mit Max war stets professionell und produktiv. Er kombiniert technische Expertise mit einem ausgeprägten Verständnis für Geschäftsanforderungen und findet immer den optimalen Weg, beides in Einklang zu bringen.",
+      "position": "Produktleiter, Digital Solutions AG"
+    }
+  ],
+  "publications": [
+    {
+      "name": "Skalierbare Frontend-Architekturen für Enterprise-Anwendungen",
+      "publisher": "entwickler.de",
+      "releaseDate": "2022-03-18",
+      "url": "https://example.com",
+      "summary": "Eine umfassende Analyse moderner Frontend-Architekturen für große Unternehmen, mit praktischen Beispielen und Implementierungsstrategien."
+    },
+    {
+      "name": "Microservices vs. Monolithen: Eine praktische Entscheidungshilfe",
+      "publisher": "Informatik Aktuell",
+      "releaseDate": "2021-06-22",
+      "url": "https://example.com",
+      "summary": "Ein praxisorientierter Leitfaden zur Entscheidungsfindung zwischen Microservices- und Monolith-Architekturen basierend auf Projektanforderungen und Teamstruktur."
+    }
+  ]
+}

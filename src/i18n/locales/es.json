@@ -1,0 +1,42 @@
+{
+  "sections": {
+    "work": "Experiencia Laboral",
+    "education": "Formación Académica",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "awards": "Premios",
+    "certificates": "Certificados",
+    "publications": "Publicaciones",
+    "languages": "Idiomas",
+    "interests": "Intereses",
+    "references": "Referencias",
+    "volunteer": "Voluntariado"
+  },
+  "common": {
+    "present": "Actual",
+    "visitWebsite": "Visitar Sitio Web",
+    "viewPublication": "Ver Publicación",
+    "viewProject": "Ver Proyecto",
+    "viewCertificate": "Ver Certificado",
+    "viewAward": "Ver Premio",
+    "at": "en",
+    "contactInfo": "Información de Contacto",
+    "email": "Correo Electrónico",
+    "phone": "Teléfono",
+    "website": "Sitio Web",
+    "socialProfiles": "Perfiles Sociales",
+    "profile": "perfil",
+    "fluency": {
+      "native": "Nativo",
+      "fluent": "Fluido",
+      "advanced": "Avanzado",
+      "intermediate": "Intermedio",
+      "basic": "Básico"
+    }
+  },
+  "date": {
+    "format": "MMM yyyy",
+    "range": "{{start}} - {{end}}",
+    "present": "{{start}} - Actual"
+  }
+}

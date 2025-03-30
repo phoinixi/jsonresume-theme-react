@@ -1,17 +1,16 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface SectionTitleProps {
   title: string;
-  id?: string;
 }
 
-export const SectionTitle: FC<SectionTitleProps> = ({ title, id }) => {
+export const SectionTitle: FC<SectionTitleProps> = memo(({ title }) => {
+  const { t } = useTranslation();
+
   return (
-    <h2
-      id={id}
-      className="flex items-center pb-0 mb-5 text-sm font-bold tracking-wide uppercase border-b text-brand print:m-0 print:p-0 print:border-b-0 print:page-break-after-avoid"
-    >
-      {title}
+    <h2 className="pb-2 mb-6 font-bold uppercase border-b-2 text-md text-brand border-brand print:text-lg print:font-semibold print:mb-3">
+      {t(title)}
     </h2>
   );
-};
+});

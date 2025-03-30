@@ -11,7 +11,7 @@ export const Summary: FC<SummaryProps> = ({ summary }) => {
 
   return (
     <>
-      <SectionTitle title="About" />
+      <SectionTitle title="sections.about" />
       <SectionCard summary={summary} />
     </>
   );

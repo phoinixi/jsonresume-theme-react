@@ -31,7 +31,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   if (!projects?.length) return null;
 
   return (
-    <TimelineSection title="Projects">
+    <TimelineSection title="sections.projects">
       {projects.map((project, index) => (
         <ProjectItem key={`project-${index}`} project={project} index={index} />
       ))}

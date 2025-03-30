@@ -40,7 +40,7 @@ export const Education: FC<EducationProps> = ({ education }) => {
   if (!education || education.length === 0) return null;
 
   return (
-    <TimelineSection title="Education">
+    <TimelineSection title="sections.education">
       {education.map((edu, index) => (
         <EducationItem key={`education-${index}`} education={edu} index={index} />
       ))}

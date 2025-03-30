@@ -3,6 +3,7 @@ import type { ResumeSchema } from '../types/resumeSchema';
 import { BsAward } from 'react-icons/bs';
 import { SectionTitle } from './ui/SectionTitle';
 import { useDate } from '../lib/hooks/useDate';
+import { useTranslation } from 'react-i18next';
 
 type Certificate = NonNullable<ResumeSchema['certificates']>[number];
 
@@ -13,6 +14,7 @@ interface CertificateItemProps {
 
 const CertificateItem = memo<CertificateItemProps>(({ certificate, index }) => {
   const formattedDate = useDate(certificate.date);
+  const { t } = useTranslation();
 
   return (
     <div
@@ -28,10 +30,18 @@ const CertificateItem = memo<CertificateItemProps>(({ certificate, index }) => {
           <h3 className="text-base font-medium text-foreground">{certificate.name}</h3>
 
           <div className="mt-1 text-sm text-foreground-secondary">
-            {certificate.issuer && <div className="mb-1">Issued by: {certificate.issuer}</div>}
+            {certificate.issuer && (
+              <div className="mb-1">
+                {t('common.issuedBy')}: {certificate.issuer}
+              </div>
+            )}
 
             <div className="flex flex-wrap gap-4 text-sm">
-              {certificate.date && <span>Date: {formattedDate}</span>}
+              {certificate.date && (
+                <span>
+                  {t('date.label')}: {formattedDate}
+                </span>
+              )}
 
               {certificate.url && (
                 <a
@@ -40,7 +50,7 @@ const CertificateItem = memo<CertificateItemProps>(({ certificate, index }) => {
                   rel="noopener noreferrer"
                   className="text-brand hover:underline"
                 >
-                  View Certificate
+                  {t('common.viewCertificate')}
                 </a>
               )}
             </div>
@@ -60,7 +70,7 @@ export const Certificates: React.FC<CertificatesProps> = ({ certificates }) => {
 
   return (
     <section className="mb-6">
-      <SectionTitle title="Certificates" />
+      <SectionTitle title="sections.certificates" />
       <div className="space-y-3">
         {certificates.map((certificate, index) => (
           <CertificateItem key={`certificate-${index}`} certificate={certificate} index={index} />

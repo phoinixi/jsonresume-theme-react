@@ -1,0 +1,49 @@
+{
+  "sections": {
+    "work": "Expérience Professionnelle",
+    "education": "Formation",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "awards": "Distinctions",
+    "certificates": "Certifications",
+    "publications": "Publications",
+    "languages": "Langues",
+    "interests": "Centres d'Intérêt",
+    "references": "Références",
+    "volunteer": "Bénévolat"
+  },
+  "common": {
+    "present": "Présent",
+    "visitWebsite": "Visiter le Site",
+    "viewPublication": "Voir la Publication",
+    "viewProject": "Voir le Projet",
+    "viewCertificate": "Voir le Certificat",
+    "viewAward": "Voir la Distinction",
+    "at": "chez",
+    "contactInfo": "Informations de contact",
+    "email": "Email",
+    "phone": "Téléphone",
+    "website": "Site web",
+    "socialProfiles": "Profils sociaux",
+    "profile": "profil",
+    "duration": {
+      "year": "an",
+      "years": "ans",
+      "month": "mois",
+      "months": "mois",
+      "lessThanMonth": "Moins d'un mois"
+    },
+    "fluency": {
+      "native": "Langue Maternelle",
+      "fluent": "Courant",
+      "advanced": "Avancé",
+      "intermediate": "Intermédiaire",
+      "basic": "Notions"
+    }
+  },
+  "date": {
+    "format": "MMM yyyy",
+    "range": "{{start}} - {{end}}",
+    "present": "{{start}} - Présent"
+  }
+}

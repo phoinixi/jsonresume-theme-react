@@ -1,0 +1,49 @@
+{
+  "sections": {
+    "work": "工作经历",
+    "education": "教育背景",
+    "skills": "技能专长",
+    "projects": "项目经验",
+    "awards": "获奖情况",
+    "certificates": "证书资质",
+    "publications": "发表作品",
+    "languages": "语言能力",
+    "interests": "兴趣爱好",
+    "references": "推荐人",
+    "volunteer": "志愿服务"
+  },
+  "common": {
+    "present": "至今",
+    "visitWebsite": "访问网站",
+    "viewPublication": "查看作品",
+    "viewProject": "查看项目",
+    "viewCertificate": "查看证书",
+    "viewAward": "查看奖项",
+    "at": "在",
+    "contactInfo": "联系方式",
+    "email": "电子邮箱",
+    "phone": "电话",
+    "website": "网站",
+    "socialProfiles": "社交媒体",
+    "profile": "主页",
+    "duration": {
+      "year": "年",
+      "years": "年",
+      "month": "个月",
+      "months": "个月",
+      "lessThanMonth": "不到一个月"
+    },
+    "fluency": {
+      "native": "母语",
+      "fluent": "流利",
+      "advanced": "高级",
+      "intermediate": "中级",
+      "basic": "基础"
+    }
+  },
+  "date": {
+    "format": "yyyy年MM月",
+    "range": "{{start}} - {{end}}",
+    "present": "{{start}} - 至今"
+  }
+}

@@ -1,28 +1,30 @@
-import React from 'react';
+import { FC, memo } from 'react';
 import { getContactIcon } from '../lib/socialIcons';
 import { Summary } from './Summary';
 import { ContactInfo } from './ui/ContactInfo';
 import { SocialProfiles } from './ui/SocialProfiles';
-import { ResumeSchema } from '../types/resumeSchema';
+import type { ResumeSchema } from '../types/resumeSchema';
 
 interface HeaderProps {
   basics: NonNullable<ResumeSchema['basics']>;
 }
 
-export const Header: React.FC<HeaderProps> = ({ basics }) => {
+export const Header: FC<HeaderProps> = memo(({ basics }) => {
   const { name, label, email, phone, url, profiles, location, summary } = basics;
   const { icon: LocationIcon, color: locationColor } = getContactIcon('location');
 
   return (
     <header className="relative mb-2 print:mb-0 print:p-0">
-      <h1 className="mb-1 text-5xl font-light text-foreground-muted print:mb-0.5 print:text-[32px]">
-        {name}
-      </h1>
-      {label && (
-        <h2 className="mb-2 text-xl font-normal text-foreground print:mb-1 print:text-[16px]">
-          {label}
-        </h2>
-      )}
+      <div>
+        <h1 className="mb-1 text-5xl font-light text-foreground-muted print:mb-0.5 print:text-[32px]">
+          {name}
+        </h1>
+        {label && (
+          <h2 className="mb-2 text-xl font-normal text-foreground print:mb-1 print:text-[16px]">
+            {label}
+          </h2>
+        )}
+      </div>
 
       {location && (
         <div
@@ -51,4 +53,4 @@ export const Header: React.FC<HeaderProps> = ({ basics }) => {
       )}
     </header>
   );
-};
+});

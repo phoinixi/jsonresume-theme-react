@@ -1,0 +1,42 @@
+{
+  "sections": {
+    "work": "Опыт Работы",
+    "education": "Образование",
+    "skills": "Навыки",
+    "projects": "Проекты",
+    "awards": "Награды",
+    "certificates": "Сертификаты",
+    "publications": "Публикации",
+    "languages": "Языки",
+    "interests": "Интересы",
+    "references": "Рекомендации",
+    "volunteer": "Волонтёрство"
+  },
+  "common": {
+    "present": "Настоящее Время",
+    "visitWebsite": "Посетить Сайт",
+    "viewPublication": "Просмотр Публикации",
+    "viewProject": "Просмотр Проекта",
+    "viewCertificate": "Просмотр Сертификата",
+    "viewAward": "Просмотр Награды",
+    "at": "в",
+    "contactInfo": "Контактная Информация",
+    "email": "Электронная Почта",
+    "phone": "Телефон",
+    "website": "Веб-сайт",
+    "socialProfiles": "Социальные Профили",
+    "profile": "профиль",
+    "fluency": {
+      "native": "Родной",
+      "fluent": "Свободный",
+      "advanced": "Продвинутый",
+      "intermediate": "Средний",
+      "basic": "Базовый"
+    }
+  },
+  "date": {
+    "format": "MMM yyyy",
+    "range": "{{start}} - {{end}}",
+    "present": "{{start}} - Настоящее Время"
+  }
+}

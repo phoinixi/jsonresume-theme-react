@@ -34,7 +34,7 @@ export const WorkExperience: FC<WorkExperienceProps> = ({ work }) => {
   if (!work || work.length === 0) return null;
 
   return (
-    <TimelineSection title="Work Experience">
+    <TimelineSection title="sections.work">
       {work.map((workItem, index) => (
         <WorkItem key={`work-${index}`} workItem={workItem} index={index} />
       ))}

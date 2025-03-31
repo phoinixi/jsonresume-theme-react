@@ -1,7 +1,7 @@
 import { format, isValid, Locale } from 'date-fns';
 import { de, enUS, es, fr, it, ru, zhCN } from 'date-fns/locale';
 import { useTranslation } from 'react-i18next';
-import { useLocale } from './useLocale';
+import { useLocale } from '../../i18n/hooks/useLocale';
 
 // Map ISO language codes to date-fns locale objects
 const getDateLocale = (locale: string) => {
@@ -20,7 +20,7 @@ const getDateLocale = (locale: string) => {
 
 export const useDate = (dateString?: string) => {
   const { t } = useTranslation();
-  const locale = useLocale();
+  const { locale } = useLocale();
   const dateLocale = getDateLocale(locale);
 
   if (!dateString) return '';

@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A React-based theme for JSON Resume",
   "type": "module",
-  "main": "index.js",
+  "main": "index.cjs",
   "scripts": {
     "dev:base": "vite",
     "dev": "node scripts/dev.js",

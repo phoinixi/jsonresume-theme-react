@@ -37,6 +37,7 @@
   "date": {
     "format": "MMM yyyy",
     "range": "{{start}} - {{end}}",
-    "present": "{{start}} - Настоящее Время"
+    "present": "{{start}} - Настоящее Время",
+    "label": "Дата"
   }
 }

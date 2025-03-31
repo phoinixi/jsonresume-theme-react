@@ -10,42 +10,14 @@ interface AppProps {
   language?: Locale;
 }
 
-// Get language from environment variable or URL parameter, with fallback to prop
-const getLanguage = (propLanguage?: Locale): Locale => {
-  // Check for environment variable (used in development with custom script)
-  if (import.meta.env.VITE_LANGUAGE) {
-    return import.meta.env.VITE_LANGUAGE as Locale;
-  }
-
-  // Check URL parameters (used in production)
-  if (typeof window !== 'undefined') {
-    const urlParams = new URLSearchParams(window.location.search);
-    const langParam = urlParams.get('lang');
-    if (langParam) {
-      return langParam as Locale;
-    }
-  }
-
-  // Fallback to prop or default
-  return propLanguage || 'en';
-};
-
 const App: FC<AppProps> = ({ resume, language = 'en' }) => {
-  const currentLanguage = getLanguage(language);
-
   useEffect(() => {
-    console.log('Setting language to:', currentLanguage);
-    i18n.changeLanguage(currentLanguage);
+    console.log('Setting language to:', language);
+    i18n.changeLanguage(language);
 
-    // Force update language if needed
     const html = document.documentElement;
-    html.setAttribute('lang', currentLanguage);
-
-    // Debug translations
-    console.log('i18n ready:', i18n.isInitialized);
-    console.log('Current language:', i18n.language);
-    console.log('Available languages:', i18n.options.supportedLngs);
-  }, [currentLanguage]);
+    html.setAttribute('lang', language);
+  }, [language]);
 
   return (
     <I18nextProvider i18n={i18n}>

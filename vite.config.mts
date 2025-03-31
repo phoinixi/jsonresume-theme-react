@@ -1,22 +1,23 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
   build: {
     lib: {
-      entry: "src/main-server.tsx",
-      formats: ["cjs"],
-      fileName: () => "index.js",
+      entry: 'src/main-server.tsx',
+      formats: ['cjs'],
+      fileName: () => 'index.cjs',
     },
-    outDir: "dist",
+    outDir: 'dist',
     rollupOptions: {
-      external: ["react", "react-dom"],
+      external: ['react', 'react-dom'],
       output: {
         globals: {
-          react: "React",
-          "react-dom": "ReactDOM",
+          react: 'React',
+          'react-dom': 'ReactDOM',
         },
+        format: 'cjs',
       },
     },
   },

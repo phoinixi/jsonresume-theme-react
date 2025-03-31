@@ -18,12 +18,9 @@ const AwardItem = memo<AwardItemProps>(({ award, index }) => {
   const formattedDate = useDate(award.date);
   const { t } = useTranslation();
 
-  console.log('Rendering award item:', award);
-
   return (
     <div key={`award-${index}`} className="p-3 bg-white bg-opacity-5 border-l-2 border-brand">
       <div className="flex items-start">
-        {/* Award Icon */}
         <div className="mr-3 text-brand">
           <BsStarFill className="w-4 h-4" />
         </div>
@@ -68,10 +65,7 @@ interface AwardsProps {
 }
 
 export const Awards: React.FC<AwardsProps> = ({ awards }) => {
-  console.log('Awards component called with:', awards);
-
   if (!awards?.length) {
-    console.log('No awards found or empty array');
     return null;
   }
 
@@ -88,10 +82,7 @@ export const Awards: React.FC<AwardsProps> = ({ awards }) => {
 };
 
 export const AwardsCard: React.FC<AwardsProps> = memo(({ awards }) => {
-  console.log('AwardsCard component called with:', awards);
-
   if (!awards?.length) {
-    console.log('No awards found or empty array in AwardsCard');
     return null;
   }
 

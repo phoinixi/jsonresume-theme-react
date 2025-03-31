@@ -72,6 +72,7 @@
   "date": {
     "format": "MMM yyyy",
     "range": "{{start}} - {{end}}",
-    "present": "{{start}} - Attuale"
+    "present": "{{start}} - Attuale",
+    "label": "Data"
   }
 }

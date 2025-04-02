@@ -41,7 +41,7 @@ export const Resume: FC<ResumeProps> = memo(({ resume }) => {
 
       <div className="flex flex-col gap-8 lg:flex-row print:flex-row print:gap-4">
         {/* Main content - left column (wider) */}
-        <div className="lg:w-2/3 print:w-[72%] print:pr-4">
+        <div className="lg:w-2/3 print:w-[72%] print:pr-8">
           {work && work.length > 0 && <WorkExperience work={work} />}
           {education && education.length > 0 && <Education education={education} />}
           {projects && projects.length > 0 && <Projects projects={projects} />}

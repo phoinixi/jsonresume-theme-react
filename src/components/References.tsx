@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import type { ResumeSchema } from '../types/resumeSchema';
-import { SectionTitle } from './ui/SectionTitle';
 import { SidebarCard } from './ui/SidebarCard';
+import { SidebarSection } from './ui/SidebarSection';
 
 type Reference = NonNullable<ResumeSchema['references']>[number];
 
@@ -15,13 +15,10 @@ export const References: FC<ReferencesProps> = ({ references }) => {
   }
 
   return (
-    <section className="mb-6">
-      <SectionTitle title="sections.references" />
-      <div className="space-y-2">
-        {references.map((reference, index) => (
-          <SidebarCard key={index} title={reference.name} content={reference.reference} />
-        ))}
-      </div>
-    </section>
+    <SidebarSection title="sections.references">
+      {references.map((reference, index) => (
+        <SidebarCard key={index} title={reference.name} content={reference.reference} />
+      ))}
+    </SidebarSection>
   );
 };

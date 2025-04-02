@@ -1,65 +1,12 @@
-import React, { memo } from 'react';
+import React from 'react';
 import type { ResumeSchema } from '../types/resumeSchema';
 import { BsAward } from 'react-icons/bs';
-import { SectionTitle } from './ui/SectionTitle';
 import { useDate } from '../lib/hooks/useDate';
 import { useTranslation } from 'react-i18next';
+import { SidebarSection } from './ui/SidebarSection';
+import { SidebarCard } from './ui/SidebarCard';
 
 type Certificate = NonNullable<ResumeSchema['certificates']>[number];
-
-interface CertificateItemProps {
-  certificate: Certificate;
-  index: number;
-}
-
-const CertificateItem = memo<CertificateItemProps>(({ certificate, index }) => {
-  const formattedDate = useDate(certificate.date);
-  const { t } = useTranslation();
-
-  return (
-    <div
-      key={`certificate-${index}`}
-      className="p-3 bg-white bg-opacity-5 rounded-md border-l-2 border-color"
-    >
-      <div className="flex items-start">
-        <div className="mr-3 text-brand">
-          <BsAward className="w-5 h-5" />
-        </div>
-
-        <div className="flex-1">
-          <h3 className="text-base font-medium text-foreground">{certificate.name}</h3>
-
-          <div className="mt-1 text-sm text-foreground-secondary">
-            {certificate.issuer && (
-              <div className="mb-1">
-                {t('common.issuedBy')}: {certificate.issuer}
-              </div>
-            )}
-
-            <div className="flex flex-wrap gap-4 text-sm">
-              {certificate.date && (
-                <span>
-                  {t('date.label')}: {formattedDate}
-                </span>
-              )}
-
-              {certificate.url && (
-                <a
-                  href={certificate.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-brand hover:underline"
-                >
-                  {t('common.viewCertificate')}
-                </a>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-});
 
 interface CertificatesProps {
   certificates?: Certificate[];
@@ -68,14 +15,34 @@ interface CertificatesProps {
 export const Certificates: React.FC<CertificatesProps> = ({ certificates }) => {
   if (!certificates?.length) return null;
 
+  const { t } = useTranslation();
+
   return (
-    <section className="mb-6">
-      <SectionTitle title="sections.certificates" />
-      <div className="space-y-3">
-        {certificates.map((certificate, index) => (
-          <CertificateItem key={`certificate-${index}`} certificate={certificate} index={index} />
-        ))}
-      </div>
-    </section>
+    <SidebarSection title="sections.certificates" contentClassName="space-y-3">
+      {certificates.map((certificate, index) => {
+        const formattedDate = useDate(certificate.date);
+        const dateInfo = certificate.date ? `${t('date.label')}: ${formattedDate}` : '';
+
+        return (
+          <SidebarCard
+            key={index}
+            title={
+              <div className="flex items-start">
+                <div className="mr-3 text-brand">
+                  <BsAward className="w-5 h-5" />
+                </div>
+                <div>{certificate.name}</div>
+              </div>
+            }
+            subtitle={
+              certificate.issuer ? `${t('common.issuedBy')}: ${certificate.issuer}` : undefined
+            }
+            date={dateInfo}
+            url={certificate.url}
+            urlLabel={t('common.viewCertificate')}
+          />
+        );
+      })}
+    </SidebarSection>
   );
 };

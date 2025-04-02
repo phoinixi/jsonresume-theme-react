@@ -1,5 +1,6 @@
 import { FC, memo } from 'react';
-import { TimelineSection, TimelineEntry } from './ui/TimelineSection';
+import { TimelineSection } from './ui/TimelineSection';
+import { TimelineEntry } from './ui/TimelineEntry';
 import { SectionCard } from './ui/SectionCard';
 import type { ResumeSchema } from '../types/resumeSchema';
 

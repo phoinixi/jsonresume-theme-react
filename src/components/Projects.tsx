@@ -1,7 +1,8 @@
 import React, { memo } from 'react';
 import type { ResumeSchema } from '../types/resumeSchema';
 import { SectionCard } from './ui/SectionCard';
-import { TimelineSection, TimelineEntry } from './ui/TimelineSection';
+import { TimelineSection } from './ui/TimelineSection';
+import { TimelineEntry } from './ui/TimelineEntry';
 
 type Project = NonNullable<ResumeSchema['projects']>[number];
 

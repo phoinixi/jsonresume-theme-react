@@ -1,7 +1,8 @@
 import { FC, memo } from 'react';
 import type { ResumeSchema } from '../types/resumeSchema';
 import { useTranslation } from 'react-i18next';
-import { TimelineSection, TimelineEntry } from './ui/TimelineSection';
+import { TimelineSection } from './ui/TimelineSection';
+import { TimelineEntry } from './ui/TimelineEntry';
 import { SectionCard } from './ui/SectionCard';
 
 interface PublicationsProps {

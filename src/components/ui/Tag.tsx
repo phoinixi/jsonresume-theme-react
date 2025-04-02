@@ -18,7 +18,7 @@ export const Tag: FC<TagProps> = ({ children, className, variant = 'default' }) 
   return (
     <span
       className={cn(
-        'inline-flex items-center px-2.5 py-0.5 text-sm rounded-md border print:px-1.5 print:py-0.5 print:text-[9px] print:rounded-sm',
+        'inline-flex items-center px-2 py-0.5 text-sm rounded-md border print:px-1 print:py-0 print:text-[8px] print:rounded-sm',
         variantClasses[variant],
         className
       )}

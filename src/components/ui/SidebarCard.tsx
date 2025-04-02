@@ -31,21 +31,28 @@ export const SidebarCard: FC<SidebarCardProps> = memo(
     return (
       <div
         className={cn(
-          'mb-3 p-3 bg-white bg-opacity-5 rounded-md border-l-2 border-brand',
+          'mb-2 p-2 bg-white bg-opacity-5 rounded-md border-l-2 border-brand print:p-1.5 print:mb-1.5',
           className
         )}
       >
         {title && (
-          <h3 className={cn('text-base font-medium text-foreground', titleClassName)}>{title}</h3>
+          <h3 className={cn('text-base font-medium text-foreground print:text-xs', titleClassName)}>
+            {title}
+          </h3>
         )}
 
         {subtitle && (
-          <div className={cn('text-sm text-foreground-secondary', subtitleClassName)}>
+          <div
+            className={cn(
+              'text-sm text-foreground-secondary print:text-[0.65rem]',
+              subtitleClassName
+            )}
+          >
             {subtitle}
           </div>
         )}
 
-        <div className="flex flex-wrap gap-2 mt-1 text-sm">
+        <div className="flex flex-wrap gap-2 mt-0.5 text-sm print:mt-0.5 print:gap-1.5 print:text-[0.65rem]">
           {date && <span className="text-foreground-tertiary">{date}</span>}
 
           {url && (
@@ -61,12 +68,12 @@ export const SidebarCard: FC<SidebarCardProps> = memo(
         </div>
 
         {content && (
-          <div className="mt-2 text-sm text-foreground-secondary">
+          <div className="mt-1 text-sm text-foreground-secondary print:text-[0.65rem]">
             <Markdown content={content} />
           </div>
         )}
 
-        {children && <div className="mt-2">{children}</div>}
+        {children && <div className="mt-1.5 print:mt-1">{children}</div>}
       </div>
     );
   }

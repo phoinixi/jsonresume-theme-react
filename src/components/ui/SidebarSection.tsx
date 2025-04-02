@@ -16,9 +16,9 @@ export const SidebarSection: FC<SidebarSectionProps> = ({
   contentClassName,
 }) => {
   return (
-    <section className={cn('mb-6', className)}>
+    <section className={cn('mb-4 print:mb-3', className)}>
       <SectionTitle title={title} />
-      <div className={cn('space-y-2', contentClassName)}>{children}</div>
+      <div className={cn('space-y-1.5 print:space-y-1', contentClassName)}>{children}</div>
     </section>
   );
 };

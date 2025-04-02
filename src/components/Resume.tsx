@@ -36,12 +36,12 @@ export const Resume: FC<ResumeProps> = memo(({ resume }) => {
   if (!basics) return null;
 
   return (
-    <div className="container p-4 mx-auto lg:w-[960px] bg-color text-text print:max-w-full print:p-0 print:w-full">
+    <div className="container p-3 mx-auto lg:w-[960px] bg-color text-text print:max-w-full print:p-0 print:w-full">
       <Header basics={basics} />
 
-      <div className="flex flex-col gap-8 lg:flex-row print:flex-row print:gap-4">
+      <div className="flex flex-col gap-6 lg:flex-row print:flex-row print:gap-3">
         {/* Main content - left column (wider) */}
-        <div className="lg:w-2/3 print:w-[72%] print:pr-8">
+        <div className="lg:w-2/3 print:w-[72%] print:pr-4">
           {work && work.length > 0 && <WorkExperience work={work} />}
           {education && education.length > 0 && <Education education={education} />}
           {projects && projects.length > 0 && <Projects projects={projects} />}

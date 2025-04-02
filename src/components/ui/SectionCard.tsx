@@ -37,7 +37,7 @@ export const SectionCard: FC<SectionCardProps> = memo(
     return (
       <div
         className={cn(
-          'p-5 rounded-lg border border-transparent transition-shadow bg-color-secondary hover:shadow-sm hover:border-color print:bg-transparent print:p-0 print:m-0 print:hover:border-transparent print:hover:shadow-none',
+          'p-4 mb-3 rounded-lg border border-transparent transition-shadow bg-color-secondary hover:shadow-sm hover:border-color print:bg-transparent print:p-0 print:m-0 print:mb-2 print:hover:border-transparent print:hover:shadow-none',
           className
         )}
         role="article"
@@ -45,18 +45,18 @@ export const SectionCard: FC<SectionCardProps> = memo(
           title ? `section-title-${title.toLowerCase().replace(/\s+/g, '-')}` : undefined
         }
       >
-        <div className="flex flex-col gap-2 print:gap-1">
+        <div className="flex flex-col gap-1.5 print:gap-0.5">
           {title && (
             <div className="flex justify-between items-start">
               <h3
                 id={`section-title-${title.toLowerCase().replace(/\s+/g, '-')}`}
-                className="text-lg font-medium text-foreground print:text-[12px]"
+                className="text-lg font-medium text-foreground print:text-[11px]"
               >
                 <Subtitle title={title} subtitle={subtitle} subtitleUrl={subtitleUrl} />
               </h3>
               {date && (
                 <div
-                  className="text-sm whitespace-nowrap text-foreground-tertiary print:text-[9px]"
+                  className="text-sm whitespace-nowrap text-foreground-tertiary print:text-[8px]"
                   role="time"
                   aria-label={`Date: ${date}`}
                 >
@@ -67,13 +67,13 @@ export const SectionCard: FC<SectionCardProps> = memo(
           )}
           {location && (
             <div
-              className="flex gap-2 items-center text-sm text-foreground-tertiary print:gap-1 print:text-[9px]"
+              className="flex gap-1.5 items-center text-sm text-foreground-tertiary print:gap-1 print:text-[8px]"
               role="contentinfo"
               aria-label="Location"
             >
               <LocationIcon
                 style={{ color: locationColor }}
-                className="w-4 h-4 print:hidden"
+                className="w-3.5 h-3.5 print:hidden"
                 aria-hidden="true"
               />
               {location}
@@ -81,7 +81,7 @@ export const SectionCard: FC<SectionCardProps> = memo(
           )}
 
           {keywords && keywords.length > 0 && (
-            <TagList className="mt-2 print:mt-1">
+            <TagList className="mt-1.5 print:mt-1">
               {keywords.map((keyword, index) => (
                 <Tag key={`keyword-${index}`}>{keyword}</Tag>
               ))}
@@ -90,7 +90,7 @@ export const SectionCard: FC<SectionCardProps> = memo(
 
           {summary && (
             <div
-              className="mt-1 leading-snug text-foreground-secondary print:mt-0.5"
+              className="mt-1 leading-snug text-base text-foreground-secondary print:mt-0.5 print:text-[9px]"
               role="contentinfo"
               aria-label="Summary"
             >
@@ -99,19 +99,19 @@ export const SectionCard: FC<SectionCardProps> = memo(
           )}
           {highlights && highlights.length > 0 && (
             <ul
-              className="mt-2 space-y-1.5 list-disc list-outside ml-5 text-foreground-secondary print:mt-1 print:space-y-1 print:ml-10"
+              className="mt-1.5 space-y-1 list-disc list-outside ml-4 text-base text-foreground-secondary print:mt-0.5 print:space-y-0.5 print:ml-8 print:text-[8px]"
               role="list"
               aria-label="Highlights"
             >
               {highlights.map((highlight, index) => (
-                <li key={`highlight-${index}`} className="print:mb-0.5" role="listitem">
+                <li key={`highlight-${index}`} className="print:mb-0" role="listitem">
                   <Markdown content={highlight} />
                 </li>
               ))}
             </ul>
           )}
         </div>
-        {children && <div className="mt-3 print:mt-1">{children}</div>}
+        {children && <div className="mt-2 print:mt-0.5">{children}</div>}
       </div>
     );
   }

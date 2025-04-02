@@ -1,35 +1,35 @@
-import { FC, memo } from 'react';
+import { FC } from 'react';
 import type { ResumeSchema } from '../types/resumeSchema';
 import { SectionTitle } from './ui/SectionTitle';
 import { Tag } from './ui/Tag';
 import { TagList } from './ui/TagList';
 
-type Interest = NonNullable<ResumeSchema['interests']>[number];
-
-interface InterestItemProps {
-  interest: Interest;
-  index: number;
-}
-
-const InterestItem = memo<InterestItemProps>(({ interest, index }) => (
-  <Tag key={`interest-${index}`}>{interest.name}</Tag>
-));
-
 interface InterestsProps {
-  interests?: Interest[];
+  interests?: ResumeSchema['interests'];
 }
 
 export const Interests: FC<InterestsProps> = ({ interests }) => {
-  if (!interests?.length) return null;
+  if (!interests?.length) {
+    return null;
+  }
 
   return (
-    <section className="mb-8">
+    <section className="mb-6">
       <SectionTitle title="sections.interests" />
-      <TagList>
-        {interests.map((item, index) => (
-          <InterestItem key={`interest-${index}`} interest={item} index={index} />
+      <div className="grid grid-cols-2 gap-4">
+        {interests.map((interest, index) => (
+          <div key={`interest-${index}`}>
+            <h3 className="text-base font-medium text-foreground">{interest.name}</h3>
+            {interest.keywords && interest.keywords.length > 0 && (
+              <TagList className="mt-1">
+                {interest.keywords.map((keyword, keywordIndex) => (
+                  <Tag key={`keyword-${index}-${keywordIndex}`}>{keyword}</Tag>
+                ))}
+              </TagList>
+            )}
+          </div>
         ))}
-      </TagList>
+      </div>
     </section>
   );
 };

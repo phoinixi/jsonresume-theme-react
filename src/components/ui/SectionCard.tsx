@@ -37,7 +37,7 @@ export const SectionCard: FC<SectionCardProps> = memo(
     return (
       <div
         className={cn(
-          'p-5 mb-5 rounded-lg border border-transparent transition-shadow bg-color-secondary hover:shadow-sm hover:border-color print:mb-0 print:bg-transparent print:p-0 print:m-0 print:hover:border-transparent print:hover:shadow-none',
+          'p-5 rounded-lg border border-transparent transition-shadow bg-color-secondary hover:shadow-sm hover:border-color print:bg-transparent print:p-0 print:m-0 print:hover:border-transparent print:hover:shadow-none',
           className
         )}
         role="article"

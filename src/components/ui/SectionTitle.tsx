@@ -9,8 +9,9 @@ export const SectionTitle: FC<SectionTitleProps> = memo(({ title }) => {
   const { t } = useTranslation();
 
   return (
-    <h2 className="pb-2 mb-6 font-bold uppercase border-b-2 text-md text-brand border-brand print:text-lg print:font-semibold print:mb-3">
-      {t(title)}
+    <h2 className="flex items-center my-3 font-bold uppercase text-md text-brand print:text-lg print:font-semibold">
+      <span>{t(title)}</span>
+      <span className="flex-grow ml-1 border-b-2 border-brand"></span>
     </h2>
   );
 });

@@ -46,17 +46,17 @@ export const Resume: FC<ResumeProps> = memo(({ resume }) => {
           {education && education.length > 0 && <Education education={education} />}
           {projects && projects.length > 0 && <Projects projects={projects} />}
           {volunteer && volunteer.length > 0 && <Volunteer volunteer={volunteer} />}
-          {publications && publications.length > 0 && <Publications publications={publications} />}
         </div>
 
         {/* Sidebar - right column (narrower) */}
         <div className="lg:w-1/3 print:w-[28%]">
           {skills && skills.length > 0 && <Skills skills={skills} />}
           {languages && languages.length > 0 && <Languages languages={languages} />}
+          {publications && publications.length > 0 && <Publications publications={publications} />}
           {certificates && certificates.length > 0 && <Certificates certificates={certificates} />}
           {awards && awards.length > 0 && <Awards awards={awards} />}
-          {interests && interests.length > 0 && <Interests interests={interests} />}
           {references && references.length > 0 && <References references={references} />}
+          {interests && interests.length > 0 && <Interests interests={interests} />}
         </div>
       </div>
     </div>

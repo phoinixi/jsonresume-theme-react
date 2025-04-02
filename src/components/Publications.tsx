@@ -1,9 +1,9 @@
 import { FC, memo } from 'react';
 import type { ResumeSchema } from '../types/resumeSchema';
 import { useTranslation } from 'react-i18next';
-import { TimelineSection } from './ui/TimelineSection';
-import { TimelineEntry } from './ui/TimelineEntry';
-import { SectionCard } from './ui/SectionCard';
+import { SectionTitle } from './ui/SectionTitle';
+import { useDate } from '../lib/hooks/useDate';
+import { SidebarCard } from './ui/SidebarCard';
 
 interface PublicationsProps {
   publications: NonNullable<ResumeSchema['publications']>;
@@ -12,30 +12,30 @@ interface PublicationsProps {
 export const Publications: FC<PublicationsProps> = memo(({ publications }) => {
   const { t } = useTranslation();
 
+  if (!publications?.length) {
+    return null;
+  }
+
   return (
-    <TimelineSection title="sections.publications">
-      {publications.map((publication, index) => (
-        <TimelineEntry key={index} startDate={publication.releaseDate} singleDate={true}>
-          <SectionCard
-            title={publication.name}
-            subtitle={publication.publisher}
-            summary={publication.summary}
-          >
-            {publication.url && (
-              <div className="mt-2">
-                <a
-                  href="https://example.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-brand"
-                >
-                  {t('common.viewPublication')}
-                </a>
-              </div>
-            )}
-          </SectionCard>
-        </TimelineEntry>
-      ))}
-    </TimelineSection>
+    <section className="mb-6">
+      <SectionTitle title="sections.publications" />
+      <div className="space-y-2">
+        {publications.map((publication, index) => {
+          const formattedDate = useDate(publication.releaseDate);
+
+          return (
+            <SidebarCard
+              key={index}
+              title={publication.name}
+              subtitle={publication.publisher}
+              date={formattedDate}
+              url={publication.url || undefined}
+              urlLabel={t('common.viewPublication')}
+              content={publication.summary}
+            />
+          );
+        })}
+      </div>
+    </section>
   );
 });

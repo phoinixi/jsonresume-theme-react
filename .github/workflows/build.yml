@@ -39,7 +39,7 @@ jobs:
       - name: Test render default resume
         # Ensure a default resume.json exists for this test
         if: hashFiles('resume.json') != ''
-        run: resumed render resume.json --theme jsonresume-theme-local -o test-output.html
+        run: npm run render:local
 
       - name: Check if output exists
         if: hashFiles('resume.json') != ''

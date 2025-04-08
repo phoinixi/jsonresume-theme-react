@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('[Theme] index.cjs loaded.');
+console.log('[Theme] index.js loaded.');
 console.log('[Theme] __dirname:', __dirname);
 console.log('[Theme] process.cwd():', process.cwd());
 
@@ -27,7 +27,6 @@ function loadCss() {
 }
 
 function render(resume) {
-  // Load the built module, named index.cjs
   const modulePath = path.join(__dirname, 'dist/index.cjs');
   let module;
   try {

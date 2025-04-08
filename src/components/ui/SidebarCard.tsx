@@ -1,6 +1,7 @@
 import { FC, ReactNode, memo } from 'react';
 import { cn } from '../../lib/utils';
 import { Markdown } from './Markdown';
+import { spacing, colors, borders, typography } from '../../lib/styleTokens';
 
 interface SidebarCardProps {
   title?: ReactNode;
@@ -13,6 +14,7 @@ interface SidebarCardProps {
   content?: string;
   children?: ReactNode;
   className?: string;
+  id?: string;
 }
 
 export const SidebarCard: FC<SidebarCardProps> = memo(
@@ -27,24 +29,42 @@ export const SidebarCard: FC<SidebarCardProps> = memo(
     content,
     children,
     className,
+    id,
   }) => {
+    // Generate a unique ID for ARIA relationships if not provided
+    const cardId = id || `sidebar-card-${Math.random().toString(36).substr(2, 9)}`;
+    const titleId = `${cardId}-title`;
+    const subtitleId = `${cardId}-subtitle`;
+    const contentId = `${cardId}-content`;
+
     return (
       <div
         className={cn(
-          'mb-2 p-2 bg-white bg-opacity-5 rounded-md border-l-2 border-brand print:p-1.5 print:mb-1.5',
+          `${spacing.card.margin.sidebar} ${spacing.card.padding.sidebar} ${colors.bg.highlight} ${borders.radius.default} ${borders.width.left} ${borders.color.brand} ${spacing.card.padding.print}`,
           className
         )}
+        role="region"
+        id={cardId}
+        aria-labelledby={title ? titleId : undefined}
+        aria-describedby={content ? contentId : undefined}
       >
         {title && (
-          <h3 className={cn('text-base font-medium text-foreground print:text-xs', titleClassName)}>
+          <h3
+            id={titleId}
+            className={cn(
+              `${typography.size.base} ${typography.weight.medium} ${typography.color.primary} ${typography.size.print.sm}`,
+              titleClassName
+            )}
+          >
             {title}
           </h3>
         )}
 
         {subtitle && (
           <div
+            id={subtitleId}
             className={cn(
-              'text-sm text-foreground-secondary print:text-[0.65rem]',
+              `${typography.size.sm} ${typography.color.secondary} ${typography.size.print.sm}`,
               subtitleClassName
             )}
           >
@@ -52,15 +72,22 @@ export const SidebarCard: FC<SidebarCardProps> = memo(
           </div>
         )}
 
-        <div className="flex flex-wrap gap-2 mt-0.5 text-sm print:mt-0.5 print:gap-1.5 print:text-[0.65rem]">
-          {date && <span className="text-foreground-tertiary">{date}</span>}
+        <div
+          className={`flex flex-wrap ${spacing.card.gap.default} mt-0.5 ${typography.size.sm} print:mt-0.5 print:gap-1.5 ${typography.size.print.sm}`}
+        >
+          {date && (
+            <span className={typography.color.tertiary} role="time">
+              {date}
+            </span>
+          )}
 
           {url && (
             <a
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-brand hover:underline"
+              className={`${typography.color.brand} hover:underline`}
+              aria-label={`${urlLabel || 'View'} (opens in a new tab)`}
             >
               {urlLabel || 'View'}
             </a>
@@ -68,7 +95,11 @@ export const SidebarCard: FC<SidebarCardProps> = memo(
         </div>
 
         {content && (
-          <div className="mt-1 text-sm text-foreground-secondary print:text-[0.65rem]">
+          <div
+            id={contentId}
+            className={`mt-1 ${typography.size.sm} ${typography.color.secondary} ${typography.size.print.sm}`}
+            role="contentinfo"
+          >
             <Markdown content={content} />
           </div>
         )}

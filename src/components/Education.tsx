@@ -27,10 +27,10 @@ export const Education: FC<EducationProps> = ({ education }) => {
             <SectionCard
               title={title}
               subtitle={institution}
-              subtitleUrl={education.url}
+              url={education.url}
               location={education.location as string | undefined}
               summary={education.score ? `GPA: ${education.score}` : undefined}
-              keywords={education.courses || []}
+              tags={education.courses || []}
             />
           </TimelineEntry>
         );

@@ -1,117 +1,162 @@
 import { FC, ReactNode, memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { cn } from '../../lib/utils';
+import { spacing, colors, borders, typography } from '../../lib/styleTokens';
 import { TagList } from './TagList';
 import { Tag } from './Tag';
 import { getContactIcon } from '../../lib/socialIcons';
-import { Markdown } from './Markdown';
-import { Subtitle } from './Subtitle';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 
 interface SectionCardProps {
   title?: string;
-  subtitle?: string;
-  subtitleUrl?: string;
-  date?: string;
+  subtitle?: string | ReactNode;
+  url?: string;
   location?: string;
-  summary?: string;
-  keywords?: string[];
+  date?: string;
+  tags?: string[];
+  highlightTitle?: string;
   highlights?: string[];
+  summary?: string;
   children?: ReactNode;
   className?: string;
+  id?: string;
+  actionUrl?: string;
+  actionLabelKey?: string;
 }
 
 export const SectionCard: FC<SectionCardProps> = memo(
   ({
     title,
     subtitle,
-    subtitleUrl,
-    date,
+    url,
     location,
-    summary,
-    keywords,
+    date,
+    tags,
+    highlightTitle,
     highlights,
+    summary,
     children,
     className,
+    id,
+    actionUrl,
+    actionLabelKey,
   }) => {
+    const { t } = useTranslation();
     const { icon: LocationIcon, color: locationColor } = getContactIcon('location');
+
+    const cardId = id ? `card-${id}` : undefined;
+    const titleId = title ? `title-${cardId}` : undefined;
+    const summaryId = summary ? `summary-${cardId}` : undefined;
+    const highlightsId = highlights?.length ? `highlights-${cardId}` : undefined;
 
     return (
       <div
         className={cn(
-          'p-4 mb-3 rounded-lg border border-transparent transition-shadow bg-color-secondary hover:shadow-sm hover:border-color print:bg-transparent print:p-0 print:m-0 print:mb-2 print:hover:border-transparent print:hover:shadow-none',
+          `${spacing.card.padding.default} ${borders.radius.lg} ${spacing.card.margin.default} ${colors.bg.card}`,
+          'border border-transparent transition-shadow hover:shadow-sm hover:border-color',
+          'print:bg-transparent print:hover:border-transparent print:hover:shadow-none',
           className
         )}
         role="article"
-        aria-labelledby={
-          title ? `section-title-${title.toLowerCase().replace(/\s+/g, '-')}` : undefined
-        }
+        id={cardId}
+        aria-labelledby={titleId}
+        aria-describedby={[summaryId, highlightsId].filter(Boolean).join(' ') || undefined}
       >
-        <div className="flex flex-col gap-1.5 print:gap-0.5">
+        <div className={`flex flex-col ${spacing.card.gap.default} ${spacing.card.gap.print}`}>
           {title && (
-            <div className="flex justify-between items-start">
-              <h3
-                id={`section-title-${title.toLowerCase().replace(/\s+/g, '-')}`}
-                className="text-lg font-medium text-foreground print:text-[11px]"
-              >
-                <Subtitle title={title} subtitle={subtitle} subtitleUrl={subtitleUrl} />
+            <div>
+              <h3 id={titleId} className={`${typography.weight.medium} ${typography.size.base}`}>
+                {title}
+                {subtitle && (
+                  <span className={typography.color.secondary}>
+                    {` ${t('common.at', 'at')} `}
+                    {url ? (
+                      <a
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={typography.color.brand + ' hover:underline'}
+                      >
+                        {subtitle}
+                      </a>
+                    ) : (
+                      subtitle
+                    )}
+                  </span>
+                )}
               </h3>
-              {date && (
-                <div
-                  className="text-sm whitespace-nowrap text-foreground-tertiary print:text-[8px]"
-                  role="time"
-                  aria-label={`Date: ${date}`}
-                >
-                  {date}
-                </div>
-              )}
-            </div>
-          )}
-          {location && (
-            <div
-              className="flex gap-1.5 items-center text-sm text-foreground-tertiary print:gap-1 print:text-[8px]"
-              role="contentinfo"
-              aria-label="Location"
-            >
-              <LocationIcon
-                style={{ color: locationColor }}
-                className="w-3.5 h-3.5 print:hidden"
-                aria-hidden="true"
-              />
-              {location}
             </div>
           )}
 
-          {keywords && keywords.length > 0 && (
-            <TagList className="mt-1.5 print:mt-1">
-              {keywords.map((keyword, index) => (
-                <Tag key={`keyword-${index}`}>{keyword}</Tag>
+          <div className="flex flex-wrap items-center gap-1 print:gap-0.5">
+            {location && (
+              <div
+                className={`flex items-center ${typography.size.sm} ${typography.color.secondary} ${typography.size.print.sm}`}
+              >
+                <LocationIcon className="mr-1 w-3 h-3" style={{ color: locationColor }} />
+                {location}
+              </div>
+            )}
+            {date && (
+              <div
+                className={`${typography.size.sm} ${typography.color.secondary} ${typography.size.print.sm}`}
+              >
+                {location && <span className="mx-1 print:mx-0.5">•</span>}
+                {date}
+              </div>
+            )}
+          </div>
+
+          {tags && tags.length > 0 && (
+            <TagList className="mt-1">
+              {tags.map((tag, i) => (
+                <Tag key={i}>{tag}</Tag>
               ))}
             </TagList>
           )}
 
           {summary && (
             <div
-              className="mt-1 leading-snug text-base text-foreground-secondary print:mt-0.5 print:text-[9px]"
-              role="contentinfo"
-              aria-label="Summary"
+              id={summaryId}
+              className={`${typography.size.sm} ${typography.color.secondary} ${typography.size.print.sm}`}
             >
-              <Markdown content={summary} />
+              {summary}
             </div>
           )}
+
           {highlights && highlights.length > 0 && (
-            <ul
-              className="mt-1.5 space-y-1 list-disc list-outside ml-4 text-base text-foreground-secondary print:mt-0.5 print:space-y-0.5 print:ml-8 print:text-[8px]"
-              role="list"
-              aria-label="Highlights"
-            >
-              {highlights.map((highlight, index) => (
-                <li key={`highlight-${index}`} className="print:mb-0" role="listitem">
-                  <Markdown content={highlight} />
-                </li>
-              ))}
-            </ul>
+            <div id={highlightsId}>
+              {highlightTitle && (
+                <div
+                  className={`mb-1 ${typography.size.sm} ${typography.weight.medium} ${typography.size.print.sm} print:mb-0.5`}
+                >
+                  {highlightTitle}
+                </div>
+              )}
+              <ul
+                className={`ml-4 ${typography.size.sm} list-disc ${typography.color.secondary} ${typography.size.print.sm} print:ml-3`}
+              >
+                {highlights.map((highlight, i) => (
+                  <li key={i}>{highlight}</li>
+                ))}
+              </ul>
+            </div>
           )}
+
+          {actionUrl && actionLabelKey && (
+            <a
+              href={actionUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`mt-1 inline-flex items-center ${typography.size.sm} ${typography.color.brand} hover:underline print:hidden`}
+            >
+              {t(actionLabelKey)}
+              <FaExternalLinkAlt className="ml-1.5 h-3 w-3" />
+            </a>
+          )}
+
+          {children && <div className="mt-2 print:mt-0.5">{children}</div>}
         </div>
-        {children && <div className="mt-2 print:mt-0.5">{children}</div>}
       </div>
     );
   }

@@ -3,7 +3,6 @@ import type { ResumeSchema } from '../types/resumeSchema';
 import { TimelineSection } from './ui/TimelineSection';
 import { TimelineEntry } from './ui/TimelineEntry';
 import { SectionCard } from './ui/SectionCard';
-import { useTranslation } from 'react-i18next';
 
 type Volunteer = NonNullable<ResumeSchema['volunteer']>[number];
 
@@ -12,35 +11,25 @@ interface VolunteerProps {
 }
 
 export const Volunteer: FC<VolunteerProps> = ({ volunteer }) => {
-  const { t } = useTranslation();
-
   if (!volunteer?.length) return null;
 
   return (
     <TimelineSection title="sections.volunteer">
-      {volunteer.map((volunteer, index) => (
+      {volunteer.map((volunteerItem, index) => (
         <TimelineEntry
           key={`volunteer-${index}`}
-          startDate={volunteer.startDate}
-          endDate={volunteer.endDate}
+          startDate={volunteerItem.startDate}
+          endDate={volunteerItem.endDate}
         >
           <SectionCard
-            title={volunteer.position}
-            subtitle={volunteer.organization}
-            highlights={volunteer.highlights}
-            summary={volunteer.summary}
-          >
-            {volunteer.url && (
-              <a
-                href={volunteer.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-brand hover:underline"
-              >
-                {t('common.visitWebsite')}
-              </a>
-            )}
-          </SectionCard>
+            title={volunteerItem.position}
+            subtitle={volunteerItem.organization}
+            url={volunteerItem.url}
+            highlights={volunteerItem.highlights}
+            summary={volunteerItem.summary}
+            actionUrl={volunteerItem.url}
+            actionLabelKey="common.visitWebsite"
+          />
         </TimelineEntry>
       ))}
     </TimelineSection>

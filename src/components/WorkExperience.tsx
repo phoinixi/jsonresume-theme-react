@@ -26,11 +26,11 @@ export const WorkExperience: FC<WorkExperienceProps> = ({ work }) => {
           <SectionCard
             title={workItem.position}
             subtitle={workItem.name}
-            subtitleUrl={workItem.url}
+            url={workItem.url}
             location={workItem.location}
             summary={workItem.summary}
             highlights={workItem.highlights}
-            keywords={workItem.keywords}
+            tags={workItem.keywords}
           />
         </TimelineEntry>
       ))}

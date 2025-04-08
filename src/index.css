@@ -51,7 +51,6 @@
     content: none !important;
   }
 
-  /* Define page margins */
   @page {
     margin: 0.7cm 0.5cm;
     size: auto;

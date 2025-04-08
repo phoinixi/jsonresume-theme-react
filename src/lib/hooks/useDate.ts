@@ -1,9 +1,7 @@
 import { format, isValid, Locale } from 'date-fns';
 import { de, enUS, es, fr, it, ru, zhCN } from 'date-fns/locale';
 import { useTranslation } from 'react-i18next';
-import { useLocale } from '../../i18n/hooks/useLocale';
 
-// Map ISO language codes to date-fns locale objects
 const getDateLocale = (locale: string) => {
   const localeMap: Record<string, Locale> = {
     en: enUS,
@@ -19,9 +17,8 @@ const getDateLocale = (locale: string) => {
 };
 
 export const useDate = (dateString?: string) => {
-  const { t } = useTranslation();
-  const { locale } = useLocale();
-  const dateLocale = getDateLocale(locale);
+  const { t, i18n } = useTranslation();
+  const dateLocale = getDateLocale(i18n.language);
 
   if (!dateString) return '';
 
@@ -49,11 +46,9 @@ export const useDuration = (startDateString?: string, endDateString?: string) =>
   const endDate = endDateString ? new Date(endDateString) : new Date();
   if (endDateString && !isValid(endDate)) return '';
 
-  // Calculate years and months
   const diffYears = endDate.getFullYear() - startDate.getFullYear();
   const diffMonths = endDate.getMonth() - startDate.getMonth();
 
-  // Adjust for negative months
   let years = diffYears;
   let months = diffMonths;
   if (diffMonths < 0) {
@@ -61,7 +56,6 @@ export const useDuration = (startDateString?: string, endDateString?: string) =>
     months += 12;
   }
 
-  // Format the duration parts
   const parts = [];
 
   if (years > 0) {
@@ -74,7 +68,6 @@ export const useDuration = (startDateString?: string, endDateString?: string) =>
     );
   }
 
-  // If no parts (less than a month), show "Less than a month"
   if (parts.length === 0) {
     return t('common.duration.lessThanMonth');
   }

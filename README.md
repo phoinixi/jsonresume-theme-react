@@ -2,6 +2,8 @@
 
 A modern, responsive React-based theme for [JSON Resume](https://jsonresume.org/), built with React, TypeScript, and Vite.
 
+![Resume Screenshot](https://raw.githubusercontent.com/phoinixi/jsonresume-theme-react/main/screenshot.png)
+
 ## Features
 
 - 🌐 **Multilingual Resumes**: Support for completely different resume content in different languages
@@ -16,93 +18,80 @@ A modern, responsive React-based theme for [JSON Resume](https://jsonresume.org/
 - Print-optimized styling for professional PDF generation
 - Markdown support for rich text formatting in resume content
 
-## Getting Started
+## Using with resumed
 
-1. Clone the repository
-2. Install dependencies: `npm install`
-3. Create your resume.json in the root directory
-4. Start the development server: `npm run dev -- --lang=en`
+This theme is designed to work with [resumed](https://github.com/rbardini/resumed), a maintained alternative to the original `resume-cli`.
 
-## Multilingual Resumes
+**Workflow:**
 
-This theme supports completely different resume content in different languages. You can have different resume versions for different regions or languages.
+1.  **Build Theme Assets:** Run `npm run build` once in the theme directory. This compiles the necessary `dist/index.cjs` and CSS files.
+2.  **Render Resume:** Use the `resumed` command to render your specific `resume.json` file with the theme.
 
-### Setting Up Language-Specific Resumes
+**Installation:**
 
-1. Place your default (English) resume in the root directory as `resume.json`
-2. Create language-specific resume files in the root directory following the pattern `resume-{lang}.json`:
-   - `resume-fr.json` for French
-   - `resume-de.json` for German
-   - `resume-it.json` for Italian
-   - etc.
-
-Each resume file should follow the [JSON Resume schema](https://jsonresume.org/schema/).
-
-### Development with Language-Specific Resumes
-
-The language parameter is **mandatory** for both dev and build scripts.
+Install `resumed` globally:
 
 ```bash
-# Run with English (using resume.json)
-npm run dev -- --lang=en
-
-# Run with Italian (will look for resume-it.json, falls back to resume.json if not found)
-npm run dev -- --lang=it
-
-# Run with French and a custom resume file
-npm run dev -- --lang=fr --resume=./path/to/custom-resume.json
+npm install -g resumed
 ```
 
-The script first checks for a language-specific resume file (e.g., `resume-it.json` for Italian) before falling back to the default `resume.json`.
+**Rendering Examples:**
 
-### Building Language-Specific Resumes
+- **Local Theme Development:**
+  Navigate to the directory containing your `resume.json` file.
 
-Build works exactly like development, but creates optimized production builds:
+  ```bash
+  # Make sure theme assets are built first (in the theme directory)
+  # cd ../jsonresume-theme-react && npm run build && cd -
 
-```bash
-# Build English version
-npm run build -- --lang=en
+  # Render using the local theme path (relative or absolute)
+  resumed render resume.json --theme ../jsonresume-theme-react -o resume.html
 
-# Build Italian version
-npm run build -- --lang=it
+  # Render a different language (assuming resume-fr.json exists with "language": "fr")
+  resumed render resume-fr.json --theme ../jsonresume-theme-react -o resume-fr.html
 
-# Build French version with custom resume
-npm run build -- --lang=fr --resume=./path/to/custom-resume.json
-```
+  # Render PDF (requires Chromium)
+  resumed render resume.json --theme ../jsonresume-theme-react -o resume.pdf
+  ```
 
-Builds are output to `dist/{lang}/` directories (e.g., `dist/en/`, `dist/it/`).
+- **Published Theme (Once Available):**
 
-## UI Translations
+  ```bash
+  # Install the theme globally
+  npm install -g jsonresume-theme-react
 
-In addition to having completely different resume content for each language, the UI elements (like section titles, buttons, etc.) are also translated into the selected language.
+  # Render using the theme name
+  resumed render resume.json --theme react -o resume.html
 
-## Language Support
+  # Render French version (theme uses "language" field in resume-fr.json)
+  resumed render resume-fr.json --theme react -o resume-fr.html
+  ```
 
-The theme comes with built-in translations for UI elements in:
+## Getting Started for Theme Development
 
-- English (en)
-- German (de)
-- French (fr)
-- Spanish (es)
-- Italian (it)
-- Russian (ru)
-- Chinese (zh)
+1. Clone the repository: `git clone https://github.com/phoinixi/jsonresume-theme-react.git`
+2. Navigate into the theme directory: `cd jsonresume-theme-react`
+3. Install dependencies: `npm install`
+4. Place your sample `resume.json` file(s) in the root directory.
+5. Start the development server (this watches for changes and rebuilds automatically):
 
-## Development
+   ```bash
+   # For English (uses resume.json)
+   npm run dev -- --lang=en
 
-- `npm run dev -- --lang={lang}` - Start the development server with specified language
-- `npm run build -- --lang={lang}` - Build for production with specified language
-- `npm run lint` - Run linting
-- `npm run format` - Format code
+   # For French (uses resume-fr.json, if it exists)
+   npm run dev -- --lang=fr
+
+   # With a specific resume file
+   npm run dev -- --lang=en --resume=path/to/my-resume.json
+   ```
+
+   View your resume at `http://localhost:<port>`.
+
+## Other Development Scripts
+
+- `npm run build`: Builds the theme assets for production (used before publishing or with `resumed`).
+- `npm run lint`: Run linting checks.
+- `npm run format`: Format code using Prettier.
 
 ## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- [JSON Resume](https://jsonresume.org/) for the standardized resume schema
-- [React](https://reactjs.org/) for the frontend framework
-- [Vite](https://vitejs.dev/) for the build tool
-- [Tailwind CSS](https://tailwindcss.com/) for styling
-- [React Markdown](https://github.com/remarkjs/react-markdown) for Markdown rendering

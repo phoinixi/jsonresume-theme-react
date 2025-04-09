@@ -1,5 +1,5 @@
 {
-  "name": "jsonresume-theme-react",
+  "name": "@jsonresume/theme-react",
   "version": "0.0.1",
   "description": "A React-based theme for JSON Resume",
   "type": "module",

@@ -8,7 +8,8 @@
   "scripts": {
     "dev:base": "vite",
     "dev": "npm run generate-types && node scripts/dev.js",
-    "build": "npm run generate-types && tsc -b && vite build && npm run render:local",
+    "build": "npm run generate-types && tsc -b && vite build",
+    "build:ci": "npm run build && node scripts/render.js",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",

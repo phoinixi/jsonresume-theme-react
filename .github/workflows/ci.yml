@@ -39,6 +39,9 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           npm version patch
+          git add package.json
+          git commit -m "chore: bump version to $(node -p "require('./package.json').version") [skip ci]"
+          git push
           npm publish --access public --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,6 +1,6 @@
 {
-  "name": "@jsonresume/theme-react",
-  "version": "0.0.1",
+  "name": "jsonresume-theme-react",
+  "version": "0.0.2",
   "description": "A React-based theme for JSON Resume",
   "type": "module",
   "main": "index.cjs",

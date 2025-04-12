@@ -1,10 +1,30 @@
 /// <reference types="vitest" />
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import path from 'path'; // Import path for alias
+import path from 'path';
+import { compression } from 'vite-plugin-compression2';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react({
+      babel: {
+        plugins: [
+          ['@babel/plugin-transform-react-jsx', { runtime: 'automatic' }],
+          ['@babel/plugin-transform-runtime', { regenerator: true }],
+        ],
+        babelrc: false,
+        configFile: false,
+      },
+    }),
+    compression({
+      algorithm: 'gzip',
+      exclude: [/\.(br)$/, /\.(gz)$/],
+      threshold: 1024,
+      compressionOptions: {
+        level: 9,
+      },
+    }),
+  ],
   build: {
     lib: {
       entry: 'src/main-server.tsx',
@@ -20,8 +40,13 @@ export default defineConfig({
           'react-dom': 'ReactDOM',
         },
         format: 'cjs',
+        exports: 'named',
+        interop: 'auto',
       },
     },
+    minify: false,
+    sourcemap: true,
+    target: 'node16',
   },
   test: {
     globals: true,
@@ -37,6 +62,11 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+    },
+  },
+  server: {
+    headers: {
+      'Cache-Control': 'public, max-age=31536000, immutable',
     },
   },
 });

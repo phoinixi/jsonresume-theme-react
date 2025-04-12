@@ -36,11 +36,11 @@
   "author": "Francesco Esposito",
   "license": "MIT",
   "dependencies": {
-    "jsonresume-theme-local": "file:./",
     "@jsonresume/schema": "1.2.1",
     "clsx": "2.1.1",
     "date-fns": "^4.1.0",
     "i18next": "^24.2.3",
+    "jsonresume-theme-local": "file:./",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-i18next": "^15.4.1",

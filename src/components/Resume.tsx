@@ -37,7 +37,7 @@ export const Resume: FC<ResumeProps> = memo(({ resume }) => {
 
   return (
     <div
-      className={`container mx-auto p-3 lg:w-[960px] bg-color text-text print:max-w-full print:p-0 print:w-full`}
+      className={`container p-3 mx-auto lg:w-[960px] bg-color text-text print:max-w-full print:p-0 print:w-full`}
     >
       <Header basics={basics} />
 
@@ -49,14 +49,20 @@ export const Resume: FC<ResumeProps> = memo(({ resume }) => {
           {volunteer && volunteer.length > 0 && <Volunteer volunteer={volunteer} />}
         </div>
 
-        <div className={`lg:w-1/3 print:w-[28%]`}>
-          {skills && skills.length > 0 && <Skills skills={skills} />}
-          {languages && languages.length > 0 && <Languages languages={languages} />}
-          {publications && publications.length > 0 && <Publications publications={publications} />}
-          {certificates && certificates.length > 0 && <Certificates certificates={certificates} />}
-          {awards && awards.length > 0 && <Awards awards={awards} />}
-          {references && references.length > 0 && <References references={references} />}
-          {interests && interests.length > 0 && <Interests interests={interests} />}
+        <div className={`lg:w-1/3 print:w-[28%] print:pl-0`}>
+          <div className="print:space-y-2">
+            {skills && skills.length > 0 && <Skills skills={skills} />}
+            {languages && languages.length > 0 && <Languages languages={languages} />}
+            {publications && publications.length > 0 && (
+              <Publications publications={publications} />
+            )}
+            {certificates && certificates.length > 0 && (
+              <Certificates certificates={certificates} />
+            )}
+            {awards && awards.length > 0 && <Awards awards={awards} />}
+            {references && references.length > 0 && <References references={references} />}
+            {interests && interests.length > 0 && <Interests interests={interests} />}
+          </div>
         </div>
       </div>
     </div>

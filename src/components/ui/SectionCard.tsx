@@ -6,6 +6,7 @@ import { TagList } from './TagList';
 import { Tag } from './Tag';
 import { getContactIcon } from '../../lib/socialIcons';
 import { FaExternalLinkAlt } from 'react-icons/fa';
+import { Markdown } from './Markdown';
 
 interface SectionCardProps {
   title?: string;
@@ -54,7 +55,7 @@ export const SectionCard: FC<SectionCardProps> = memo(
         className={cn(
           `${spacing.card.padding.default} ${borders.radius.lg} ${spacing.card.margin.default} ${colors.bg.card}`,
           'border border-transparent transition-shadow hover:shadow-sm hover:border-color',
-          'print:bg-transparent print:hover:border-transparent print:hover:shadow-none',
+          'print:bg-transparent print:hover:border-transparent print:hover:shadow-none print:p-0',
           className
         )}
         role="article"
@@ -120,7 +121,7 @@ export const SectionCard: FC<SectionCardProps> = memo(
               id={summaryId}
               className={`${typography.size.sm} ${typography.color.secondary} ${typography.size.print.sm}`}
             >
-              {summary}
+              <Markdown content={summary} />
             </div>
           )}
 
@@ -137,7 +138,9 @@ export const SectionCard: FC<SectionCardProps> = memo(
                 className={`ml-4 ${typography.size.sm} list-disc ${typography.color.secondary} ${typography.size.print.sm} print:ml-3`}
               >
                 {highlights.map((highlight, i) => (
-                  <li key={i}>{highlight}</li>
+                  <li key={i}>
+                    <Markdown content={highlight} />
+                  </li>
                 ))}
               </ul>
             </div>

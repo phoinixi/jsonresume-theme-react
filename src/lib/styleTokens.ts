@@ -15,7 +15,7 @@ export const spacing = {
     margin: {
       default: 'mb-0',
       sidebar: 'mb-2',
-      print: 'print:mb-2',
+      print: 'print:mb-1',
     },
     gap: {
       default: 'gap-1.5',
@@ -25,7 +25,7 @@ export const spacing = {
   section: {
     margin: {
       default: 'mb-4',
-      print: 'print:mb-3',
+      print: 'print:mb-2',
     },
     item: {
       default: 'space-y-1.5',

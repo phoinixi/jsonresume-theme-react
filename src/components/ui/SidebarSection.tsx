@@ -9,6 +9,7 @@ interface SidebarSectionProps {
   className?: string;
   contentClassName?: string;
   id?: string;
+  disableDefaultSpacing?: boolean;
 }
 
 export const SidebarSection: FC<SidebarSectionProps> = ({
@@ -17,9 +18,15 @@ export const SidebarSection: FC<SidebarSectionProps> = ({
   className,
   contentClassName,
   id,
+  disableDefaultSpacing = false,
 }) => {
   const sectionId = id || `section-${Math.random().toString(36).substr(2, 9)}`;
   const titleId = `${sectionId}-title`;
+
+  // Determine if we should apply default spacing
+  // If contentClassName includes "grid", we don't want to apply spacing utilities
+  const hasGrid = contentClassName?.includes('grid');
+  const shouldDisableDefaultSpacing = disableDefaultSpacing || hasGrid;
 
   return (
     <section
@@ -30,9 +37,10 @@ export const SidebarSection: FC<SidebarSectionProps> = ({
       <SectionTitle title={title} id={titleId} />
       <div
         className={cn(
-          spacing.section.item.default,
-          spacing.section.item.print,
-          spacing.section.item.mobile,
+          // Only apply spacing utilities if not disabled
+          !shouldDisableDefaultSpacing && spacing.section.item.default,
+          !shouldDisableDefaultSpacing && spacing.section.item.print,
+          !shouldDisableDefaultSpacing && spacing.section.item.mobile,
           contentClassName
         )}
       >

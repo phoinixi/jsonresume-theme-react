@@ -1,5 +1,7 @@
 # JSON Resume Theme React
 
+![](screenshot.png)
+
 A modern, responsive React-based theme for [JSON Resume](https://jsonresume.org/), built with React, TypeScript, and Vite.
 
 ## Features

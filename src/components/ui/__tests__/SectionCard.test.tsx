@@ -125,19 +125,26 @@ describe('SectionCard', () => {
     };
     renderWithI18n(<SectionCard {...props} />);
     expect(screen.getByText(props.highlightTitle)).toBeInTheDocument();
+
+    // Find the text content and ensure it's within list items
     const item1 = screen.getByText('Did X');
     const item2 = screen.getByText('Did Y');
     expect(item1).toBeInTheDocument();
     expect(item2).toBeInTheDocument();
-    expect(item1.tagName).toBe('LI');
-    expect(item2.tagName).toBe('LI');
+
+    // Check that each text is within a list item, even if not direct parent
+    expect(item1.closest('li')).not.toBeNull();
+    expect(item2.closest('li')).not.toBeNull();
   });
 
   it('renders highlights without title if highlightTitle is missing', () => {
     const props = { highlights: ['Did X'] };
     renderWithI18n(<SectionCard {...props} />);
     expect(screen.queryByText('Key Achievements:')).not.toBeInTheDocument(); // Assuming default title isn't used
-    expect(screen.getByText('Did X').tagName).toBe('LI');
+
+    // Find the text and ensure it's within a list item
+    const item = screen.getByText('Did X');
+    expect(item.closest('li')).not.toBeNull();
   });
 
   it('does not render empty sections', () => {

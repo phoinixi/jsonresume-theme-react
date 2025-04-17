@@ -58,67 +58,32 @@ A modern, responsive React-based theme for [JSON Resume](https://jsonresume.org/
 
 ### Multilingual Support
 
-The theme supports multiple languages through separate JSON files. Each language version should have its own resume file with the language code in the filename (e.g., `resume-fr.json` for French).
+The theme supports multiple languages using the `language` property within your `resume.json` file. The theme uses `i18next` for internationalization, and translations are located in the `src/i18n` directory.
 
-#### Serving Different Languages
+#### How it Works
 
-1. Create language-specific resume files:
+1.  **Set the Language in `resume.json`:**
+    Inside your `resume.json` file, specify the desired language code (e.g., `en`, `fr`, `de`) at the root level:
 
-   ```bash
-   # English (default)
-   resume.json
+    ```json
+    {
+      "language": "fr", // Set this to the desired language
+      "basics": {
+        // ... your basic info
+      }
+      // ... rest of your resume data
+    }
+    ```
 
-   # French
-   resume-fr.json
+2.  **Rendering:**
+    When you run the render script (`npm run render:local` or using `resumed`), the theme will read the root `language` property and load the corresponding translations.
 
-   # German
-   resume-de.json
-   ```
+    The rendered output file (`public/index.html` by default) will be in the language specified in the JSON.
 
-2. Each resume file should include the language code in its metadata:
+3.  **Development Server:**
+    The development server (`npm run dev`) will also respect the root `language` set in the `resume.json` file used for preview.
 
-   ```json
-   {
-     "meta": {
-       "language": "fr" // For French version
-     }
-     // ... rest of your resume data
-   }
-   ```
-
-3. Start the development server with a specific language:
-
-   ```bash
-   # For English
-   npm run dev -- --lang=en
-
-   # For French
-   npm run dev -- --lang=fr
-
-   # For German
-   npm run dev -- --lang=de
-   ```
-
-#### Building Multiple Languages
-
-To build and render resumes in different languages, simply specify the resume file:
-
-```bash
-# Build and render English version
-npm run render:resumed resume.json
-
-# Build and render French version
-npm run render:resumed resume-fr.json
-
-# Build and render German version
-npm run render:resumed resume-de.json
-```
-
-The script will automatically detect the language from the resume file's content and use it for rendering. Each build will create a separate HTML file in the `public` directory:
-
-- `public/index.html` (English)
-- `public/index-fr.html` (French)
-- `public/index-de.html` (German)
+**Note:** While you _can_ maintain separate files like `resume-en.json`, `resume-fr.json` for organizational purposes, the theme itself only cares about the root `language` property within the specific JSON file being rendered or previewed.
 
 ### Available Scripts
 

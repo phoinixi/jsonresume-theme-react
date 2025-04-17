@@ -126,7 +126,7 @@ export const SectionCard: FC<SectionCardProps> = memo(
           )}
 
           {highlights && highlights.length > 0 && (
-            <div id={highlightsId}>
+            <div id={highlightsId} className="print:px-4">
               {highlightTitle && (
                 <div
                   className={`mb-1 ${typography.size.sm} ${typography.weight.medium} ${typography.size.print.sm} print:mb-0.5`}
@@ -135,7 +135,10 @@ export const SectionCard: FC<SectionCardProps> = memo(
                 </div>
               )}
               <ul
-                className={`ml-4 ${typography.size.sm} list-disc ${typography.color.secondary} ${typography.size.print.sm} print:ml-3`}
+                className={cn(
+                  `ml-4 ${typography.size.sm} list-disc ${typography.color.secondary}`,
+                  `${typography.size.print.sm} print:ml-4 print:list-disc`
+                )}
               >
                 {highlights.map((highlight, i) => (
                   <li key={i}>

@@ -1,122 +1,122 @@
 {
-  "language": "it",
+  "language": "en",
   "basics": {
-    "name": "Giovanni Rossi",
-    "label": "Sviluppatore Full Stack",
-    "email": "giovanni.rossi@example.com",
-    "phone": "+39 012 345 6789",
-    "url": "https://example.com",
-    "summary": "Sviluppatore Full Stack con 6 anni di esperienza nello sviluppo di applicazioni web e mobile. Specializzato in JavaScript e framework moderni come React e Node.js. Appassionato di architetture scalabili e ottimizzazione delle prestazioni.",
+    "name": "John Doe",
+    "label": "Full Stack Developer",
+    "email": "john.doe@example.com",
+    "phone": "+1 555 123 4567",
+    "url": "https://example.com/johndoe",
+    "summary": "Full Stack Developer with 6 years of experience in developing web and mobile applications. Specialized in JavaScript and modern frameworks like React and Node.js. Passionate about scalable architectures and performance optimization.",
     "location": {
-      "address": "Via Roma 123",
-      "postalCode": "00100",
-      "city": "Roma",
-      "region": "Lazio",
-      "countryCode": "IT"
+      "address": "123 Main Street",
+      "postalCode": "90210",
+      "city": "Beverly Hills",
+      "region": "California",
+      "countryCode": "US"
     },
     "profiles": [
       {
         "network": "LinkedIn",
-        "username": "giovannirossi",
-        "url": "https://example.com"
+        "username": "johndoe",
+        "url": "https://linkedin.com/in/johndoe"
       },
       {
         "network": "GitHub",
-        "username": "giovannirossi",
-        "url": "https://example.com"
+        "username": "johndoe",
+        "url": "https://github.com/johndoe"
       },
       {
         "network": "Twitter",
-        "username": "giovannirossi",
-        "url": "https://example.com"
+        "username": "johndoe",
+        "url": "https://twitter.com/johndoe"
       },
       {
         "network": "Medium",
-        "username": "giovannirossi",
-        "url": "https://example.com"
+        "username": "johndoe",
+        "url": "https://medium.com/@johndoe"
       }
     ]
   },
   "work": [
     {
-      "name": "Tech Solutions S.p.A.",
+      "name": "Tech Solutions Inc.",
       "position": "Lead Full Stack Developer",
-      "url": "https://example.com",
+      "url": "https://techsolutionsinc.example.com",
       "startDate": "2021-03-01",
-      "summary": "Guida di un team di sviluppatori nella creazione di applicazioni web e mobile per clienti internazionali. Implementazione di best practice nello sviluppo e nell'architettura software.",
+      "summary": "Led a team of developers in creating web and mobile applications for international clients. Implemented best practices in software development and architecture.",
       "highlights": [
-        "Guidato un team di 8 sviluppatori su 5 progetti principali per clienti",
-        "Implementata architettura a microservizi riducendo i tempi di deployment del 60%",
-        "Migliorate le prestazioni dell'applicazione riducendo i tempi di caricamento del 40%",
-        "Impostati processi CI/CD abilitando deployment giornalieri"
+        "Led a team of 8 developers on 5 major client projects",
+        "Implemented microservices architecture reducing deployment times by 60%",
+        "Improved application performance reducing load times by 40%",
+        "Set up CI/CD processes enabling daily deployments"
       ]
     },
     {
-      "name": "Startup Innovativa S.r.l.",
+      "name": "Innovative Startup LLC",
       "position": "Senior Full Stack Developer",
-      "url": "https://example.com",
+      "url": "https://innovativestartup.example.com",
       "startDate": "2018-09-01",
       "endDate": "2021-02-28",
-      "summary": "Sviluppo di una piattaforma SaaS per la gestione delle relazioni con i clienti utilizzando React, Node.js e GraphQL. Progettazione e implementazione di funzionalità chiave e interfacce utente responsive.",
+      "summary": "Developed a SaaS platform for customer relationship management using React, Node.js, and GraphQL. Designed and implemented key features and responsive user interfaces.",
       "highlights": [
-        "Sviluppate e lanciate 3 funzionalità principali generando il 30% di entrate aggiuntive",
-        "Ottimizzate le query del database riducendo il tempo di risposta delle API del 65%",
-        "Fatto da mentore a 4 sviluppatori junior, accelerando la loro crescita tecnica",
-        "Partecipato alla revisione completa dell'UI con approccio orientato ai componenti"
+        "Developed and launched 3 major features generating 30% additional revenue",
+        "Optimized database queries reducing API response time by 65%",
+        "Mentored 4 junior developers, accelerating their technical growth",
+        "Participated in a complete UI overhaul with a component-driven approach"
       ]
     },
     {
-      "name": "Agenzia Web Creativa",
-      "position": "Sviluppatore Frontend",
-      "url": "https://example.com",
+      "name": "Creative Web Agency",
+      "position": "Frontend Developer",
+      "url": "https://creativeweb.example.com",
       "startDate": "2017-01-15",
       "endDate": "2018-08-31",
-      "summary": "Progettazione e sviluppo di interfacce utente per clienti nei settori lusso, finanza ed e-commerce.",
+      "summary": "Designed and developed user interfaces for clients in the luxury, finance, and e-commerce sectors.",
       "highlights": [
-        "Sviluppati oltre 15 siti web responsive per clienti premium",
-        "Create animazioni e interazioni complesse migliorando l'engagement utente",
-        "Implementate metodologie di design system accelerando lo sviluppo del 40%"
+        "Developed over 15 responsive websites for premium clients",
+        "Created complex animations and interactions enhancing user engagement",
+        "Implemented design system methodologies speeding up development by 40%"
       ]
     }
   ],
   "education": [
     {
-      "institution": "Politecnico Nazionale",
-      "url": "https://example.com",
-      "area": "Ingegneria del Software",
-      "studyType": "Laurea Magistrale",
+      "institution": "National Polytechnic University",
+      "url": "https://npu.example.edu",
+      "area": "Software Engineering",
+      "studyType": "Master's Degree",
       "startDate": "2015-09-01",
       "endDate": "2017-06-30",
-      "score": "110 e Lode",
+      "score": "Summa Cum Laude",
       "courses": [
-        "Architettura del Software",
-        "Sviluppo Web Avanzato",
-        "Intelligenza Artificiale",
-        "Sicurezza Informatica",
+        "Software Architecture",
+        "Advanced Web Development",
+        "Artificial Intelligence",
+        "Cybersecurity",
         "Data Science"
       ]
     },
     {
-      "institution": "Università Statale",
-      "url": "https://example.com",
-      "area": "Informatica",
-      "studyType": "Laurea Triennale",
+      "institution": "State University",
+      "url": "https://stateu.example.edu",
+      "area": "Computer Science",
+      "studyType": "Bachelor's Degree",
       "startDate": "2012-09-01",
       "endDate": "2015-06-30",
-      "score": "110/110",
+      "score": "4.0 GPA",
       "courses": [
-        "Algoritmi e Strutture Dati",
-        "Programmazione Orientata agli Oggetti",
-        "Basi di Dati",
-        "Matematica Discreta",
-        "Sistemi Operativi"
+        "Algorithms and Data Structures",
+        "Object-Oriented Programming",
+        "Databases",
+        "Discrete Mathematics",
+        "Operating Systems"
       ]
     }
   ],
   "skills": [
     {
       "name": "Frontend",
-      "level": "Esperto",
+      "level": "Expert",
       "keywords": [
         "JavaScript",
         "TypeScript",
@@ -132,7 +132,7 @@
     },
     {
       "name": "Backend",
-      "level": "Avanzato",
+      "level": "Advanced",
       "keywords": [
         "Node.js",
         "Express",
@@ -147,63 +147,63 @@
     },
     {
       "name": "Mobile",
-      "level": "Intermedio",
+      "level": "Intermediate",
       "keywords": ["React Native", "Flutter", "Progressive Web Apps", "Firebase"]
     },
     {
       "name": "DevOps",
-      "level": "Intermedio",
+      "level": "Intermediate",
       "keywords": ["AWS", "GCP", "CI/CD", "GitHub Actions", "Kubernetes", "Terraform"]
     }
   ],
   "languages": [
     {
-      "language": "Inglese",
-      "fluency": "Madrelingua"
+      "language": "English",
+      "fluency": "Native speaker"
     },
     {
-      "language": "Spagnolo",
-      "fluency": "Fluente"
+      "language": "Spanish",
+      "fluency": "Fluent"
     },
     {
-      "language": "Francese",
-      "fluency": "Intermedio"
+      "language": "French",
+      "fluency": "Intermediate"
     },
     {
-      "language": "Tedesco",
-      "fluency": "Base"
+      "language": "German",
+      "fluency": "Basic"
     }
   ],
   "projects": [
     {
-      "name": "Piattaforma Gestione Progetti",
-      "description": "Applicazione web completa per la gestione di progetti con tracciamento in tempo reale, metriche e reporting automatizzato.",
+      "name": "Project Management Platform",
+      "description": "Comprehensive web application for project management featuring real-time tracking, metrics, and automated reporting.",
       "highlights": [
-        "Architettura micro-frontend con React e Module Federation",
-        "Backend Node.js con API GraphQL",
-        "Sistema di notifiche in tempo reale con WebSockets",
-        "Analisi dati e visualizzazioni con D3.js"
+        "Micro-frontend architecture with React and Module Federation",
+        "Node.js backend with GraphQL API",
+        "Real-time notification system using WebSockets",
+        "Data analysis and visualizations with D3.js"
       ],
       "keywords": ["React", "Node.js", "GraphQL", "MongoDB", "WebSockets", "Docker"],
       "startDate": "2020-05-01",
       "endDate": "2020-11-30",
-      "url": "https://example.com",
-      "roles": ["Architetto", "Lead Developer", "DevOps"]
+      "url": "https://projectplatform.example.com",
+      "roles": ["Architect", "Lead Developer", "DevOps"]
     },
     {
-      "name": "App Mobile Monitoraggio Fitness",
-      "description": "Applicazione cross-platform che permette agli utenti di tracciare attività fisiche, impostare obiettivi e visualizzare progressi.",
+      "name": "Fitness Tracking Mobile App",
+      "description": "Cross-platform application allowing users to track physical activities, set goals, and view progress.",
       "highlights": [
-        "Sviluppata con React Native per iOS e Android",
-        "Sincronizzazione Bluetooth con dispositivi connessi",
-        "Modalità offline con sincronizzazione automatica",
-        "Visualizzazione dati personalizzata e report di progresso"
+        "Developed with React Native for iOS and Android",
+        "Bluetooth synchronization with connected devices",
+        "Offline mode with automatic synchronization",
+        "Custom data visualization and progress reports"
       ],
       "keywords": ["React Native", "Redux", "Firebase", "Realm", "Bluetooth LE", "Charts"],
       "startDate": "2019-02-01",
       "endDate": "2019-08-15",
-      "url": "https://example.com",
-      "roles": ["Sviluppatore Mobile", "UI/UX Designer"]
+      "url": "https://fittrackapp.example.com",
+      "roles": ["Mobile Developer", "UI/UX Designer"]
     }
   ],
   "certificates": [
@@ -211,104 +211,104 @@
       "name": "Google Cloud Professional Cloud Architect",
       "issuer": "Google Cloud",
       "date": "2022-05-20",
-      "url": "https://example.com"
+      "url": "https://cloud.google.com/certification/cloud-architect"
     },
     {
       "name": "AWS Solutions Architect - Associate",
       "issuer": "Amazon Web Services",
       "date": "2021-09-10",
-      "url": "https://example.com"
+      "url": "https://aws.amazon.com/certification/certified-solutions-architect-associate/"
     },
     {
       "name": "Certified Scrum Master",
       "issuer": "Scrum Alliance",
       "date": "2020-03-15",
-      "url": "https://example.com"
+      "url": "https://www.scrumalliance.org/get-certified/scrum-master-track/certified-scrummaster"
     }
   ],
   "awards": [
     {
-      "title": "Premio Innovazione Digitale",
+      "title": "Digital Innovation Award",
       "date": "2022-06-15",
-      "awarder": "Associazione Innovazione Tech",
-      "summary": "Riconoscimento per la progettazione di una soluzione innovativa nel dominio della sanità connessa.",
-      "url": "https://example.com"
+      "awarder": "Tech Innovation Association",
+      "summary": "Recognition for designing an innovative solution in the connected health domain.",
+      "url": "https://techinnovation.example.org/awards/2022"
     },
     {
-      "title": "Tech Hackathon - Primo Premio",
+      "title": "Tech Hackathon - First Prize",
       "date": "2019-11-25",
       "awarder": "City Tech",
-      "summary": "Primo premio in hackathon per lo sviluppo di una soluzione di mobilità urbana sostenibile.",
-      "url": "https://example.com"
+      "summary": "First prize in a hackathon for developing a sustainable urban mobility solution.",
+      "url": "https://citytech.example.com/hackathon/2019"
     }
   ],
   "volunteer": [
     {
-      "organization": "CodeForItalia",
-      "position": "Mentore",
-      "url": "https://example.com",
+      "organization": "CodeForAmerica",
+      "position": "Mentor",
+      "url": "https://codeforamerica.example.org",
       "startDate": "2020-01-01",
-      "summary": "Mentoring a giovani sviluppatori e organizzazione di workshop di programmazione per comunità svantaggiate.",
+      "summary": "Mentoring young developers and organizing coding workshops for underserved communities.",
       "highlights": [
-        "Fatto da mentore a oltre 20 giovani sviluppatori",
-        "Organizzati 12 workshop di programmazione web e mobile",
-        "Contribuito a progetti open source a beneficio dei servizi pubblici"
+        "Mentored over 20 young developers",
+        "Organized 12 web and mobile programming workshops",
+        "Contributed to open-source projects benefiting public services"
       ]
     },
     {
-      "organization": "Sviluppatori Senza Frontiere",
-      "position": "Sviluppatore Volontario",
-      "url": "https://example.com",
+      "organization": "Developers Without Borders",
+      "position": "Volunteer Developer",
+      "url": "https://devswithoutborders.example.org",
       "startDate": "2018-06-01",
       "endDate": "2019-12-31",
-      "summary": "Sviluppo di applicazioni per ONG internazionali facilitando la gestione delle risorse e la comunicazione sul campo.",
+      "summary": "Developed applications for international NGOs facilitating resource management and field communication.",
       "highlights": [
-        "Sviluppata un'applicazione di gestione crisi usata da 3 ONG",
-        "Progettato un sistema di raccolta dati funzionante in aree a bassa connettività",
-        "Formato personale locale nell'uso e manutenzione degli strumenti"
+        "Developed a crisis management application used by 3 NGOs",
+        "Designed a data collection system functional in low-connectivity areas",
+        "Trained local staff in tool usage and maintenance"
       ]
     }
   ],
   "interests": [
     {
-      "name": "Fotografia",
-      "keywords": ["Urbana", "Viaggi", "Bianco e Nero"]
+      "name": "Photography",
+      "keywords": ["Urban", "Travel", "Black & White"]
     },
     {
-      "name": "Sport Acquatici",
-      "keywords": ["Vela", "Immersioni Subacquee", "Kayak"]
+      "name": "Water Sports",
+      "keywords": ["Sailing", "Scuba Diving", "Kayaking"]
     },
     {
-      "name": "Gastronomia",
-      "keywords": ["Cucina Asiatica", "Pasticceria", "Degustazione Vini"]
+      "name": "Gastronomy",
+      "keywords": ["Asian Cuisine", "Pastry", "Wine Tasting"]
     }
   ],
   "references": [
     {
-      "name": "Sara Bianchi",
-      "reference": "Giovanni è uno sviluppatore eccezionale che combina perfettamente competenze tecniche e visione strategica. La sua capacità di comprendere le esigenze aziendali e tradurle in soluzioni tecniche è notevole. Una vera risorsa per qualsiasi team.",
-      "position": "Direttore Tecnico, Tech Solutions S.p.A."
+      "name": "Sarah Smith",
+      "reference": "John is an exceptional developer who perfectly blends technical skills with strategic vision. His ability to understand business needs and translate them into technical solutions is remarkable. A true asset to any team.",
+      "position": "Technical Director, Tech Solutions Inc."
     },
     {
-      "name": "Marco Verdi",
-      "reference": "Ho avuto il privilegio di lavorare con Giovanni su diversi progetti complessi. La sua competenza tecnica e la sua metodologia rigorosa sono state cruciali per il successo delle nostre iniziative. È anche un eccellente comunicatore e un mentore naturale.",
-      "position": "CTO, Startup Innovativa S.r.l."
+      "name": "Mark Green",
+      "reference": "I had the privilege of working with John on several complex projects. His technical expertise and rigorous methodology were crucial to the success of our initiatives. He is also an excellent communicator and a natural mentor.",
+      "position": "CTO, Innovative Startup LLC"
     }
   ],
   "publications": [
     {
-      "name": "Architetture Micro-Frontend: Sfide e Soluzioni",
-      "publisher": "Giornale dello Sviluppatore",
+      "name": "Micro-Frontend Architectures: Challenges and Solutions",
+      "publisher": "Developer Journal",
       "releaseDate": "2022-08-10",
-      "url": "https://example.com",
-      "summary": "Analisi approfondita delle architetture micro-frontend, presentando vantaggi, sfide e strategie di implementazione ottimali per applicazioni web moderne."
+      "url": "https://devjournal.example.com/micro-frontends",
+      "summary": "In-depth analysis of micro-frontend architectures, presenting advantages, challenges, and optimal implementation strategies for modern web applications."
     },
     {
-      "name": "Ottimizzazione Applicazioni React: Oltre le Basi",
+      "name": "Optimizing React Applications: Beyond the Basics",
       "publisher": "Dev.to",
       "releaseDate": "2021-04-22",
-      "url": "https://example.com",
-      "summary": "Guida pratica sulle tecniche avanzate di ottimizzazione delle prestazioni nelle applicazioni React, includendo casi studio e benchmark."
+      "url": "https://dev.to/johndoe/optimizing-react-apps",
+      "summary": "Practical guide on advanced performance optimization techniques in React applications, including case studies and benchmarks."
     }
   ]
 }

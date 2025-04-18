@@ -18,9 +18,9 @@ export const SectionTitle: FC<SectionTitleProps> = ({ children, title, id, class
     <h2
       id={id}
       className={cn(
-        'flex items-center my-2 font-semibold uppercase text-base',
+        'flex items-center mt-2 mb-1 font-semibold uppercase text-base',
         colors.text.brand,
-        'print:text-xs print:my-1.5',
+        'print:text-sm print:mt-0 print:mb-0.5',
         className
       )}
     >

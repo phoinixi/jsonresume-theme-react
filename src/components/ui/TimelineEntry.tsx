@@ -21,7 +21,7 @@ export const TimelineEntry: React.FC<TimelineEntryProps> = ({
   const dateDisplay = singleDate ? formattedDate : dateRange;
 
   return (
-    <div className="mb-4 print:m-0 print:py-4 print:border-b print:border-color" role="article">
+    <div className="mb-4 print:m-0 print:py-2 print:border-b print:border-color" role="article">
       {startDate && (
         <div className="mb-2 text-sm print:mb-1 print:text-[9px]">
           <div className="flex items-center">

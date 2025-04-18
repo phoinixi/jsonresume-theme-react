@@ -14,7 +14,7 @@ export const Header: FC<HeaderProps> = memo(({ basics }) => {
   const { icon: LocationIcon, color: locationColor } = getContactIcon('location');
 
   return (
-    <header className="relative mb-2 print:mb-0 print:p-0 print:flex print:flex-row-reverse print:gap-4">
+    <header className="relative mb-2 print:mb-0 print:p-0">
       {image && (
         <img
           src={image}
@@ -56,7 +56,7 @@ export const Header: FC<HeaderProps> = memo(({ basics }) => {
         <SocialProfiles profiles={profiles} />
 
         {summary && (
-          <div className="mt-6 leading-relaxed text-foreground-secondary print:m-0 print:py-4">
+          <div className="mt-6 leading-relaxed text-foreground-secondary print:my-2 print:py-2">
             <Summary summary={summary} />
           </div>
         )}

@@ -107,5 +107,6 @@
   "files": [
     "dist",
     "index.cjs"
-  ]
+  ],
+  "comment": "The files array ensures only the necessary files are included when publishing to npm"
 }

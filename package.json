@@ -19,7 +19,8 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
-    "start": "resumed --theme jsonresume-theme-local"
+    "start": "resumed --theme jsonresume-theme-local",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "jsonresume",
@@ -101,5 +102,10 @@
       "@semantic-release/npm",
       "@semantic-release/github"
     ]
-  }
+  },
+  "module": "dist/index.js",
+  "files": [
+    "dist",
+    "index.cjs"
+  ]
 }

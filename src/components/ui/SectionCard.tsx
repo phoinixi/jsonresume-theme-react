@@ -23,6 +23,7 @@ interface SectionCardProps {
   id?: string;
   actionUrl?: string;
   actionLabelKey?: string;
+  addonAfterTitle?: ReactNode; // new slot for inline elements (e.g., growth badge)
 }
 
 export const SectionCard: FC<SectionCardProps> = memo(
@@ -41,6 +42,7 @@ export const SectionCard: FC<SectionCardProps> = memo(
     id,
     actionUrl,
     actionLabelKey,
+    addonAfterTitle,
   }) => {
     const { t } = useTranslation();
     const { icon: LocationIcon, color: locationColor } = getContactIcon('location');
@@ -65,8 +67,9 @@ export const SectionCard: FC<SectionCardProps> = memo(
       >
         <div className={`flex flex-col ${spacing.card.gap.default} ${spacing.card.gap.print}`}>
           {title && (
-            <div>
-              <h3 id={titleId} className={`${typography.weight.medium} ${typography.size.base}`}>
+            <div className="flex items-start justify-between gap-2">
+              <h3 id={titleId} className={`${typography.weight.medium} ${typography.size.base} flex-1`}
+              >
                 {title}
                 {subtitle && (
                   <span className={typography.color.secondary}>
@@ -86,6 +89,11 @@ export const SectionCard: FC<SectionCardProps> = memo(
                   </span>
                 )}
               </h3>
+              {addonAfterTitle && (
+                <div className="flex-shrink-0 mt-0.5 print:hidden" aria-hidden="false">
+                  {addonAfterTitle}
+                </div>
+              )}
             </div>
           )}
 

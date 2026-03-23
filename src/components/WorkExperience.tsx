@@ -26,7 +26,7 @@ export const WorkExperience: FC<WorkExperienceProps> = ({ work }) => {
   // Group contiguous roles by company name (assuming work is reverse chronological).
   // Each group gets a wrapper with a single GrowthIndicator summarizing progression.
   const groups: { company: string; items: Work[] }[] = [];
-  work.forEach((item) => {
+  work.forEach(item => {
     const company = item.name || '';
     const lastGroup = groups[groups.length - 1];
     if (lastGroup && lastGroup.company === company) {
@@ -74,9 +74,19 @@ export const WorkExperience: FC<WorkExperienceProps> = ({ work }) => {
         const showHeader = totalRoles > 1;
 
         return (
-          <div key={`group-${gi}`} className={showHeader ? 'pl-3 border-l-2 border-brand mb-4 print:mb-2' : 'mb-4 print:mb-2'}>
+          <div
+            key={`group-${gi}`}
+            className={
+              showHeader ? 'pl-3 border-l-2 border-brand mb-4 print:mb-2' : 'mb-4 print:mb-2'
+            }
+          >
             {showHeader && (
-              <GroupHeader company={group.company} start={earliestStart} end={latestEnd} roles={totalRoles} />
+              <GroupHeader
+                company={group.company}
+                start={earliestStart}
+                end={latestEnd}
+                roles={totalRoles}
+              />
             )}
             {group.items.map((workItem, wi) => (
               <TimelineEntry

@@ -68,7 +68,9 @@ export const SectionCard: FC<SectionCardProps> = memo(
         <div className={`flex flex-col ${spacing.card.gap.default} ${spacing.card.gap.print}`}>
           {title && (
             <div className="flex items-start justify-between gap-2">
-              <h3 id={titleId} className={`${typography.weight.medium} ${typography.size.base} flex-1`}
+              <h3
+                id={titleId}
+                className={`${typography.weight.medium} ${typography.size.base} flex-1`}
               >
                 {title}
                 {subtitle && (

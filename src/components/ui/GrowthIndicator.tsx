@@ -18,7 +18,8 @@ export const GrowthIndicator: FC<GrowthIndicatorProps> = ({
   className,
   ariaLabel,
 }) => {
-  const clampedPercent = typeof percent === 'number' ? Math.max(0, Math.min(100, percent)) : undefined;
+  const clampedPercent =
+    typeof percent === 'number' ? Math.max(0, Math.min(100, percent)) : undefined;
   const clampedLevel = typeof level === 'number' ? Math.max(1, Math.min(5, level)) : undefined;
 
   return (
@@ -34,13 +35,15 @@ export const GrowthIndicator: FC<GrowthIndicatorProps> = ({
       aria-label={ariaLabel || label}
     >
       {/* Simple arrow glyph, avoids extra icon deps in tests */}
-      <span aria-hidden="true" className="font-bold leading-none">↑</span>
+      <span aria-hidden="true" className="font-bold leading-none">
+        ↑
+      </span>
       <span className="leading-none">{label}</span>
 
       {/* Optional tiny level dots (1-5) */}
       {typeof clampedLevel === 'number' && (
         <span className="ml-1 flex items-center gap-0.5" aria-hidden="true">
-          {[0, 1, 2, 3, 4].map((i) => (
+          {[0, 1, 2, 3, 4].map(i => (
             <span
               key={i}
               className={cn(
@@ -54,11 +57,11 @@ export const GrowthIndicator: FC<GrowthIndicatorProps> = ({
 
       {/* Optional tiny progress bar */}
       {typeof clampedPercent === 'number' && (
-        <span className="ml-1 inline-flex items-center w-12 h-1.5 rounded-full bg-brand/10 overflow-hidden" aria-hidden="true">
-          <span
-            className="h-full bg-brand"
-            style={{ width: `${clampedPercent}%` }}
-          />
+        <span
+          className="ml-1 inline-flex items-center w-12 h-1.5 rounded-full bg-brand/10 overflow-hidden"
+          aria-hidden="true"
+        >
+          <span className="h-full bg-brand" style={{ width: `${clampedPercent}%` }} />
         </span>
       )}
     </span>

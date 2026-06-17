@@ -36,9 +36,7 @@ export const Resume: FC<ResumeProps> = memo(({ resume }) => {
   if (!basics) return null;
 
   return (
-    <div
-      className={`w-full p-3 bg-color text-text print:p-0 print:px-6`}
-    >
+    <div className={`w-full p-3 bg-color text-text print:p-0 print:px-6`}>
       <Header basics={basics} />
 
       <div className={`flex flex-col gap-6 md:flex-row print:flex-row print:gap-3`}>

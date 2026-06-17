@@ -12,7 +12,7 @@ export const Skills: React.FC<SkillsProps> = ({ skills }) => {
   if (!skills?.length) return null;
 
   return (
-    <SidebarSection title="sections.skills" contentClassName="grid grid-cols-2 gap-4">
+    <SidebarSection title="sections.skills" contentClassName="grid grid-cols-2 gap-4 print:grid-cols-1">
       {skills.map((skill, skillIndex) => (
         <div key={`skill-${skillIndex}`}>
           <h3 className="text-base font-medium text-foreground">{skill.name}</h3>
